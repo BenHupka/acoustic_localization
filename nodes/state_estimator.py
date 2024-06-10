@@ -2,6 +2,7 @@
 import numpy as np
 import rclpy
 from geometry_msgs.msg import PoseStamped, PoseWithCovarianceStamped
+from nav_msgs.msg import Odometry
 from hippo_msgs.msg import RangeMeasurement, RangeMeasurementArray, AnchorPose
 from rcl_interfaces.msg import SetParametersResult
 from rclpy.node import Node
@@ -59,8 +60,8 @@ class state_estimator(Node):
         # anchor pose array, will be updatet with incoming position updates
         self.anchor_poses = np.zeros((self.num_anchors, 3))
 
-        self.position_pub = self.create_publisher(msg_type=PoseStamped,
-                                                  topic='position_estimate',
+        self.state_estimation_pub = self.create_publisher(msg_type=Odometry,
+                                                  topic='state_estimate',
                                                   qos_profile=1)
 
         self.anchor_pose_sub = self.create_subscription(
@@ -159,15 +160,19 @@ class state_estimator(Node):
         self.P = f_jacobian @ self.P @ f_jacobian.transpose() + self.Q
 
     def publish_pose_msg(self, state: np.ndarray, now: rclpy.time.Time) -> None:
-        msg = PoseStamped()
+        msg = Odometry()
 
         msg.header.stamp = now.to_msg()
         msg.header.frame_id = "map"
-        msg.pose.position.x = state[0, 0]
-        msg.pose.position.y = state[1, 0]
-        msg.pose.position.z = state[2, 0]
+        msg.child_frame_id = "map"
+        msg.pose.pose.position.x = state[0, 0]
+        msg.pose.pose.position.y = state[1, 0]
+        msg.pose.pose.position.z = state[2, 0]
+        msg.twist.twist.linear.x = state[3, 0]
+        msg.twist.twist.linear.y = state[4, 0]
+        msg.twist.twist.linear.z = state[5, 0]
 
-        self.position_pub.publish(msg)
+        self.state_estimation_pub.publish(msg)
 
 
 def main():
