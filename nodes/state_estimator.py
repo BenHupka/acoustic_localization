@@ -1,12 +1,9 @@
 #!/usr/bin/env python3
 import numpy as np
 import rclpy
-from geometry_msgs.msg import PoseStamped, PoseWithCovarianceStamped
 from nav_msgs.msg import Odometry
-from hippo_msgs.msg import RangeMeasurement, RangeMeasurementArray, AnchorPose
-from rcl_interfaces.msg import SetParametersResult
+from hippo_msgs.msg import RangeMeasurement, AnchorPose
 from rclpy.node import Node
-from rclpy.qos import QoSHistoryPolicy, QoSProfile, QoSReliabilityPolicy
 from sensor_msgs.msg import FluidPressure
 
 from tf_transformations import euler_from_quaternion
@@ -54,15 +51,14 @@ class state_estimator(Node):
         # contain?
         # TODO tuning knob
         self.range_noise_stddev = 0.1
-        # dimnesion: num measurements x num measurements
+        # dimension: num measurements x num measurements
         # attention, this size is varying! -> Depends on detected Tags
 
         # anchor pose array, will be updatet with incoming position updates
         self.anchor_poses = np.zeros((self.num_anchors, 3))
 
-        self.state_estimation_pub = self.create_publisher(msg_type=Odometry,
-                                                  topic='state_estimate',
-                                                  qos_profile=1)
+        self.state_estimation_pub = self.create_publisher(
+            msg_type=Odometry, topic='state_estimate', qos_profile=1)
 
         self.anchor_pose_sub = self.create_subscription(
             msg_type=AnchorPose,
@@ -93,9 +89,9 @@ class state_estimator(Node):
         self.anchor_poses[anchor_id, 0] = position_msg.pose.pose.position.x
         self.anchor_poses[anchor_id, 1] = position_msg.pose.pose.position.y
         self.anchor_poses[anchor_id, 2] = position_msg.pose.pose.position.z
-        print(
-            f'anker {anchor_id}: x={self.anchor_poses[anchor_id, 0]} y={self.anchor_poses[anchor_id, 1]} z={self.anchor_poses[anchor_id, 2]}'
-        )
+        # print(
+        #     f'anker {anchor_id}: x={self.anchor_poses[anchor_id, 0]} y={self.anchor_poses[anchor_id, 1]} z={self.anchor_poses[anchor_id, 2]}'
+        # )
 
     def on_acoustic_distance(self, acoustic_distance: RangeMeasurement) -> None:
         anchor_id = acoustic_distance.id
@@ -107,7 +103,6 @@ class state_estimator(Node):
         self.prediction(dt)
         self.time_last_prediction = now
 
-        # TODO
         self.measurement_update(anchor_id, distance)
 
     def on_pressure(self, pressure_msg: FluidPressure):
@@ -132,7 +127,7 @@ class state_estimator(Node):
         h[0, 0] = math.sqrt(
             (self.anchor_poses[anchor_id, 0] - self.state[0])**2 +
             (self.anchor_poses[anchor_id, 1] - self.state[1])**2 +
-            (self.anchor_poses[anchor_id, 2] - self.distance_ROV_hydrophone -
+            (self.anchor_poses[anchor_id, 2] + self.distance_ROV_hydrophone -
              self.state[2])**2)  # Distanz zu Anker bei position estimate
         h[1, 0] = 101325.0 - 1e4 * self.state[
             2]  # Druckmessung bei position estimate
@@ -150,9 +145,9 @@ class state_estimator(Node):
         K = self.P @ H.transpose() @ np.linalg.inv(S)
         self.state = self.state + K @ y
         self.P = (np.eye(self.num_states) - (K @ H)) @ self.P
-        print('measurement update')
+        # print('measurement update')
 
-    def prediction(self, dt: float):  # dt sinnvoll???
+    def prediction(self, dt: float):
         f_jacobian = np.array([[1, 0, 0, dt, 0, 0], [0, 1, 0, 0, dt, 0],
                                [0, 0, 1, 0, 0, dt], [0, 0, 0, 1, 0, 0],
                                [0, 0, 0, 0, 1, 0], [0, 0, 0, 0, 0, 1]])
