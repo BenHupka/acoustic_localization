@@ -1,0 +1,56 @@
+rosbag2_bagfile_information:
+  version: 7
+  storage_identifier: mcap
+  duration:
+    nanoseconds: 157099729194
+  starting_time:
+    nanoseconds_since_epoch: 1719835233688561091
+  message_count: 323
+  topics_with_message_count:
+    - topic_metadata:
+        name: /bluerov00/buoy_1
+        type: hippo_msgs/msg/RTK
+        serialization_format: cdr
+        offered_qos_profiles: "- history: 3\n  depth: 0\n  reliability: 1\n  durability: 2\n  deadline:\n    sec: 9223372036\n    nsec: 854775807\n  lifespan:\n    sec: 9223372036\n    nsec: 854775807\n  liveliness: 1\n  liveliness_lease_duration:\n    sec: 9223372036\n    nsec: 854775807\n  avoid_ros_namespace_conventions: false"
+        type_description_hash: RIHS01_709860d691453561cb9cf32abda5f0524436d883766865ea4ac78220fec4d7bd
+      message_count: 157
+    - topic_metadata:
+        name: /bluerov00/distance_tof
+        type: hippo_msgs/msg/DistanceTOF
+        serialization_format: cdr
+        offered_qos_profiles: "- history: 3\n  depth: 0\n  reliability: 1\n  durability: 2\n  deadline:\n    sec: 9223372036\n    nsec: 854775807\n  lifespan:\n    sec: 9223372036\n    nsec: 854775807\n  liveliness: 1\n  liveliness_lease_duration:\n    sec: 9223372036\n    nsec: 854775807\n  avoid_ros_namespace_conventions: false"
+        type_description_hash: RIHS01_42a90a3984517bd0715c8d9ec51d7f4b6416943454b702aa17fdc0dd690ef735
+      message_count: 3
+    - topic_metadata:
+        name: /bluerov00/received_packets
+        type: hippo_msgs/msg/AhoiPacket
+        serialization_format: cdr
+        offered_qos_profiles: "- history: 3\n  depth: 0\n  reliability: 1\n  durability: 2\n  deadline:\n    sec: 9223372036\n    nsec: 854775807\n  lifespan:\n    sec: 9223372036\n    nsec: 854775807\n  liveliness: 1\n  liveliness_lease_duration:\n    sec: 9223372036\n    nsec: 854775807\n  avoid_ros_namespace_conventions: false"
+        type_description_hash: RIHS01_abcb3be4e6646fd976579250b575597434599685882f759f336665fa6154d0c6
+      message_count: 3
+    - topic_metadata:
+        name: /bluerov00/sent_packets
+        type: hippo_msgs/msg/AhoiPacket
+        serialization_format: cdr
+        offered_qos_profiles: "- history: 3\n  depth: 0\n  reliability: 1\n  durability: 2\n  deadline:\n    sec: 9223372036\n    nsec: 854775807\n  lifespan:\n    sec: 9223372036\n    nsec: 854775807\n  liveliness: 1\n  liveliness_lease_duration:\n    sec: 9223372036\n    nsec: 854775807\n  avoid_ros_namespace_conventions: false"
+        type_description_hash: RIHS01_abcb3be4e6646fd976579250b575597434599685882f759f336665fa6154d0c6
+      message_count: 3
+    - topic_metadata:
+        name: /bluerov00/vehicle
+        type: hippo_msgs/msg/RTK
+        serialization_format: cdr
+        offered_qos_profiles: "- history: 3\n  depth: 0\n  reliability: 1\n  durability: 2\n  deadline:\n    sec: 9223372036\n    nsec: 854775807\n  lifespan:\n    sec: 9223372036\n    nsec: 854775807\n  liveliness: 1\n  liveliness_lease_duration:\n    sec: 9223372036\n    nsec: 854775807\n  avoid_ros_namespace_conventions: false"
+        type_description_hash: RIHS01_709860d691453561cb9cf32abda5f0524436d883766865ea4ac78220fec4d7bd
+      message_count: 157
+  compression_format: ""
+  compression_mode: ""
+  relative_file_paths:
+    - init_sos_test_0.mcap
+  files:
+    - path: init_sos_test_0.mcap
+      starting_time:
+        nanoseconds_since_epoch: 1719835233688561091
+      duration:
+        nanoseconds: 157099729194
+      message_count: 323
+  custom_data: ~

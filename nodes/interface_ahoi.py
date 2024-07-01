@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 """
-Test für Interface zu Ahoi Modem
+Interface zu Ahoi Modem, Polling-Algorithmus, Publisher von Distanzen und akustisch übertragenen Ankerpositionen
 """
 import rclpy
-import math
 from hippo_msgs.msg import AnchorPose, RangeMeasurement, AhoiPacket
 from rclpy.node import Node
 from ahoi.modem.modem import Modem
@@ -16,7 +15,7 @@ class interface_ahoi(Node):
         super().__init__(node_name='interface_ahoi')
 
         self.k = 1  # Anzahl Anker
-        self.n = 1  # Anzahl voller Zyklen vor einer Positionsabfrage
+        self.n = 4  # Anzahl voller Zyklen vor einer Positionsabfrage
         self.i = 0  # Anker dst
         self.j = 0  # Zählvariable
 
@@ -25,10 +24,10 @@ class interface_ahoi(Node):
         ] * self.k  # initiale Positionsabfrage erfolgreich?
 
         self.myModem = Modem()
-        self.myModem.connect("/dev/ttyUSB0")
-        self.myModem.setTxEcho(
-            True)  # übertragene und empfangene Pakete in Terminal echoen
-        self.myModem.setRxEcho(True)
+        self.myModem.connect("/dev/ttyUSB1")
+        # self.myModem.setTxEcho(
+        #     True)  # übertragene und empfangene Pakete in Terminal echoen
+        # self.myModem.setRxEcho(True)
 
         self.myModem.addRxCallback(self.rangingCallback)
         self.myModem.receive(thread=True)
@@ -57,9 +56,9 @@ class interface_ahoi(Node):
             while not bool:  # bool wird leider nicht aktualisiert, wenn Position angekommen
                 if self.initial_position_bool[
                         m] == True:  # hier explizit bool abfragen, der dann aktualisierter Wert ist
-                    self.get_logger().info(f'initial position {m} successful')
+                    # self.get_logger().info(f'initial position {m} successful')
                     break
-                self.get_logger().info(f'pinging anchor {m}')
+                # self.get_logger().info(f'pinging anchor {m}')
                 self.myModem.send(dst=m,
                                   payload=bytearray(),
                                   status=0,
@@ -72,7 +71,7 @@ class interface_ahoi(Node):
     def on_timer(self) -> None:
         # volle Zyklen vor Positionsabfrage
         if self.j < self.k * self.n:
-            self.get_logger().info(f'send range poll to anchor {self.i}.')
+            # self.get_logger().info(f'send range poll to anchor {self.i}.')
             self.myModem.send(dst=self.i,
                               payload=bytearray(),
                               status=2,
@@ -86,8 +85,8 @@ class interface_ahoi(Node):
             self.j += 1
         # Poll mit anderem Pakettyp, fragt sowohl ranging als auch Position an
         elif self.j == self.k * self.n:
-            self.get_logger().info(
-                f'send range and position poll to anchor {self.i}.')
+            # self.get_logger().info(
+            #     f'send range and position poll to anchor {self.i}.')
             self.myModem.send(dst=self.i,
                               payload=bytearray(),
                               status=2,
@@ -97,7 +96,7 @@ class interface_ahoi(Node):
             self.j += 1
         # Warten auf Ankerposition
         elif self.j == self.k * self.n + 1:
-            self.get_logger().info(f'wait for position of anchor {self.i}.')
+            # self.get_logger().info(f'wait for position of anchor {self.i}.')
             if self.i < self.k - 1:
                 self.i += 1
             elif self.i == self.k - 1:
@@ -118,7 +117,7 @@ class interface_ahoi(Node):
             for i in range(0, 4):
                 tof = tof * 256 + pkt.payload[i]
             distance = tof * 1e-6 * SPEED_OF_SOUND
-            self.get_logger().info(f"distance to {src}: %6.1f" % (distance))
+            # self.get_logger().info(f"distance to {src}: %6.2f" % (distance))
 
             self.publish_distance(src, distance)
 
@@ -134,8 +133,8 @@ class interface_ahoi(Node):
                                         signed=True) * 1e-2
             position_y = int.from_bytes(pkt.payload[2:4], 'big',
                                         signed=True) * 1e-2
-            self.get_logger().info(
-                f"position of anchor {src}: x = {position_x}, y = {position_y}")
+            # self.get_logger().info(
+            #     f"position of anchor {src}: x = {position_x}, y = {position_y}")
 
             self.publish_anchor_pose(src, position_x, position_y)
 
@@ -151,9 +150,9 @@ class interface_ahoi(Node):
                                         signed=True) * 1e-2
             position_y = int.from_bytes(pkt.payload[2:4], 'big',
                                         signed=True) * 1e-2
-            self.get_logger().info(
-                f"initial position of anchor {src}: x = {position_x}, y = {position_y}"
-            )
+            # self.get_logger().info(
+            #     f"initial position of anchor {src}: x = {position_x}, y = {position_y}"
+            # )
             self.initial_position_bool[src] = True
 
             self.publish_anchor_pose(src, position_x, position_y)
