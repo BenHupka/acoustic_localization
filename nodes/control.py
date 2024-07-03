@@ -9,6 +9,7 @@ from hippo_msgs.msg import Float64Stamped
 from nav_msgs.msg import Odometry
 from hippo_control_msgs.msg import ActuatorSetpoint
 from geometry_msgs.msg import PoseStamped, PoseWithCovarianceStamped, PointStamped
+from dvl_msgs.msg import DeadReckoningReport
 from rclpy.node import Node
 from rcl_interfaces.msg import SetParametersResult
 import math
@@ -81,10 +82,10 @@ class control(Node):
         self.thrust_pub = self.create_publisher(msg_type=ActuatorSetpoint,
                                                 topic='thrust_setpoint',
                                                 qos_profile=1)
-        self.vision_pose_sub = self.create_subscription(
-            msg_type=PoseWithCovarianceStamped,
-            topic='vision_pose_cov',
-            callback=self.on_vision_pose,
+        self.dvl_yaw_sub = self.create_subscription(
+            msg_type=DeadReckoningReport,
+            topic='dead_reckoning_report',
+            callback=self.on_dvl_yaw,
             qos_profile=qos)
         self.position_sub = self.create_subscription(  # für Simulation
             msg_type=Odometry,
@@ -248,16 +249,8 @@ class control(Node):
         msg.point.z = setpoint_z
         self.setpoint_pub.publish(msg)
 
-    def on_vision_pose(self, msg: PoseWithCovarianceStamped):
-        # You might want to consider the vehicle's orientation
-
-        # get the vehicle orientation expressed as quaternion
-        q = msg.pose.pose.orientation
-        # convert quaternion to euler angles
-        (roll, pitch, yaw) = euler_from_quaternion([q.x, q.y, q.z, q.w])
-
-        # TODO
-        self.yaw = yaw
+    def on_dvl_yaw(self, msg: DeadReckoningReport):
+        self.yaw = msg.report.rpy.z
 
     def on_xyz(self, xyz_msg: Odometry):
         # We received a new depth message! Now we can get to action!
