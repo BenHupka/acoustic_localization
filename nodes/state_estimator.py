@@ -24,7 +24,7 @@ class state_estimator(Node):
         self.pressure = 101325.0
 
         # initial state
-        self.x0 = np.ones((self.num_states, 1))
+        self.x0 = np.array([[0.001], [0.001], [0.001], [0.0], [0.0], [0.0]])
 
         # estimated state, this will be updated in Kalman filter algorithm
         self.state = np.copy(self.x0)
@@ -33,7 +33,7 @@ class state_estimator(Node):
         # TODO initial state covariance is tuning knob
         # dimension: num states x num states
         # matrix needs to be positive definite and symmetric
-        self.P0 = 0.3 * np.eye(self.num_states)
+        self.P0 = 1.0 * np.eye(self.num_states)
 
         # state covariance, this will be updated in Kalman filter algorithm
         self.P = self.P0
@@ -43,7 +43,7 @@ class state_estimator(Node):
         # TODO tuning knob
         # dimension: num states x num states
         # matrix needs to be positive definite and symmetric
-        self.process_noise_position_stddev = 0.1
+        self.process_noise_position_stddev = 0.3
         self.Q = (self.process_noise_position_stddev**2) * np.eye(
             self.num_states)
 
@@ -75,7 +75,7 @@ class state_estimator(Node):
         #################################################################################
         self.pressure_sub = self.create_subscription(
             msg_type=FluidPressure,
-            topic='bluerov00/pressure',
+            topic='pressure',
             callback=self.on_pressure,
             qos_profile=1)  # gerade nur so bei Simulation
         ##################################################################################
@@ -89,9 +89,9 @@ class state_estimator(Node):
         self.anchor_poses[anchor_id, 0] = position_msg.pose.pose.position.x
         self.anchor_poses[anchor_id, 1] = position_msg.pose.pose.position.y
         self.anchor_poses[anchor_id, 2] = position_msg.pose.pose.position.z
-        # print(
-        #     f'anker {anchor_id}: x={self.anchor_poses[anchor_id, 0]} y={self.anchor_poses[anchor_id, 1]} z={self.anchor_poses[anchor_id, 2]}'
-        # )
+        self.get_logger().info(
+            f'anker {anchor_id}: x={self.anchor_poses[anchor_id, 0]} y={self.anchor_poses[anchor_id, 1]} z={self.anchor_poses[anchor_id, 2]}'
+        )
 
     def on_acoustic_distance(self, acoustic_distance: RangeMeasurement) -> None:
         anchor_id = acoustic_distance.id
@@ -112,7 +112,6 @@ class state_estimator(Node):
         # We will do a prediction step with a constant rate
         now = self.get_clock().now()
         dt = (now - self.time_last_prediction).nanoseconds * 1e-9
-
         self.prediction(dt)
         self.time_last_prediction = now
 
@@ -145,7 +144,6 @@ class state_estimator(Node):
         K = self.P @ H.transpose() @ np.linalg.inv(S)
         self.state = self.state + K @ y
         self.P = (np.eye(self.num_states) - (K @ H)) @ self.P
-        # print('measurement update')
 
     def prediction(self, dt: float):
         f_jacobian = np.array([[1, 0, 0, dt, 0, 0], [0, 1, 0, 0, dt, 0],

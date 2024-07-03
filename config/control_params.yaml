@@ -1,0 +1,18 @@
+/**: # wildcard for the node name
+  ros__parameters:
+    gains:
+      p_x: 1.0
+      i_x: 0.0
+      d_x: 0.0
+      p_y: 1.0
+      i_y: 0.0
+      d_y: 0.0
+      p_z: 1.0
+      i_z: 0.0
+      d_z: 0.0
+    limit_integral_x: 0.1
+    limit_integral_y: 0.1
+    limit_integral_z: 0.1
+    thrust_offset_x: 0.0
+    thrust_offset_y: 0.0
+    thrust_offset_z: -0.3

@@ -52,19 +52,19 @@ class init_sos(Node):
             qos_profile=1)
 
         self.buoy_1_sub = self.create_subscription(msg_type=RTK,
-                                                   topic='/bluerov00/buoy_1',
+                                                   topic='buoy_1',
                                                    callback=self.on_buoy_1,
                                                    qos_profile=1)
 
         self.vehicle_sub = self.create_subscription(msg_type=RTK,
-                                                    topic='/bluerov00/vehicle',
+                                                    topic='vehicle',
                                                     callback=self.on_vehicle,
                                                     qos_profile=1)
 
         #################################################################################
         self.pressure_sub = self.create_subscription(
             msg_type=FluidPressure,
-            topic='bluerov00/pressure',
+            topic='pressure',
             callback=self.on_pressure,
             qos_profile=1)  # gerade nur so bei Simulation
         ##################################################################################

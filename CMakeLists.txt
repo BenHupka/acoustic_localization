@@ -9,11 +9,14 @@ install(PROGRAMS
   nodes/state_estimator.py
   nodes/init_sos.py
   nodes/mqtt_ros_adapter.py
+  nodes/control.py
+  nodes/acoustic_adapter.py
+  nodes/measurement_start_timer.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
 install(
-  DIRECTORY launch
+  DIRECTORY launch config
   DESTINATION share/${PROJECT_NAME}
 )
 
