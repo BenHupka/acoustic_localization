@@ -7,6 +7,7 @@ find_package(rclpy REQUIRED)
 install(PROGRAMS
   nodes/interface_ahoi.py
   nodes/state_estimator.py
+  nodes/state_estimator_pp.py
   nodes/init_sos.py
   nodes/mqtt_ros_adapter.py
   nodes/control.py

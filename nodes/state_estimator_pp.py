@@ -4,6 +4,7 @@ import rclpy
 from nav_msgs.msg import Odometry
 from hippo_msgs.msg import RangeMeasurement, AnchorPose
 from rclpy.node import Node
+from rclpy.qos import QoSHistoryPolicy, QoSProfile, QoSReliabilityPolicy
 from sensor_msgs.msg import FluidPressure
 
 import math
@@ -16,14 +17,18 @@ class state_estimator(Node):
 
         self.time_last_prediction = self.get_clock().now()
 
+        qos = QoSProfile(reliability=QoSReliabilityPolicy.BEST_EFFORT,
+                         history=QoSHistoryPolicy.KEEP_LAST,
+                         depth=1)
+
         # system specifications
         self.num_states = 6  # 3D Koordinaten des ROV Schwerpunkts, sowie Geschwindigkeiten
-        self.num_anchors = 4
-        self.distance_ROV_hydrophone = 0.0
-        self.pressure = 101325.0
+        self.num_anchors = 3
+        self.distance_ROV_hydrophone = 0.42
+        self.pressure = 100000.0
 
         # initial state
-        self.x0 = np.array([[0.001], [0.001], [0.001], [0.0], [0.0], [0.0]])
+        self.x0 = np.array([[-10.0], [1.5], [-0.5], [0.0], [0.0], [0.0]])
 
         # estimated state, this will be updated in Kalman filter algorithm
         self.state = np.copy(self.x0)
@@ -56,8 +61,13 @@ class state_estimator(Node):
         # anchor pose array, will be updatet with incoming position updates
         self.anchor_poses = np.zeros((self.num_anchors, 3))
 
-        self.state_estimation_pub = self.create_publisher(
-            msg_type=Odometry, topic='state_estimate', qos_profile=1)
+        # initialize anchor_poses
+        self.anchor_poses[0, :] = [-6.0, -3.4, -1.5]  # buoy_1 (5)
+        self.anchor_poses[1, :] = [-10.65, 5.55, -1.5]  # buoy_2
+        self.anchor_poses[2, :] = [-19.7, -22.7, -1.5]  # buoy_3
+
+        self.state_estimation_pp_pub = self.create_publisher(
+            msg_type=Odometry, topic='state_estimate_pp', qos_profile=1)
 
         self.anchor_pose_sub = self.create_subscription(
             msg_type=AnchorPose,
@@ -76,7 +86,7 @@ class state_estimator(Node):
             msg_type=FluidPressure,
             topic='pressure',
             callback=self.on_pressure,
-            qos_profile=1)  # gerade nur so bei Simulation
+            qos_profile=qos)  # gerade nur so bei Simulation
         ##################################################################################
 
         # do prediction step with 50 Hz
@@ -145,8 +155,11 @@ class state_estimator(Node):
         self.P = (np.eye(self.num_states) - (K @ H)) @ self.P
 
     def prediction(self, dt: float):
-        f_jacobian = np.array([[1, 0, 0, dt, 0, 0], [0, 1, 0, 0, dt, 0],
-                               [0, 0, 1, 0, 0, dt], [0, 0, 0, 1, 0, 0],
+        # f_jacobian = np.array([[1, 0, 0, dt, 0, 0], [0, 1, 0, 0, dt, 0],
+        #                        [0, 0, 1, 0, 0, dt], [0, 0, 0, 1, 0, 0],
+        #                        [0, 0, 0, 0, 1, 0], [0, 0, 0, 0, 0, 1]])
+        f_jacobian = np.array([[1, 0, 0, 0, 0, 0], [0, 1, 0, 0, 0, 0],
+                               [0, 0, 1, 0, 0, 0], [0, 0, 0, 1, 0, 0],
                                [0, 0, 0, 0, 1, 0], [0, 0, 0, 0, 0, 1]])
         self.state = f_jacobian @ self.state
         self.P = f_jacobian @ self.P @ f_jacobian.transpose() + self.Q
@@ -164,7 +177,7 @@ class state_estimator(Node):
         msg.twist.twist.linear.y = state[4, 0]
         msg.twist.twist.linear.z = state[5, 0]
 
-        self.state_estimation_pub.publish(msg)
+        self.state_estimation_pp_pub.publish(msg)
 
 
 def main():
