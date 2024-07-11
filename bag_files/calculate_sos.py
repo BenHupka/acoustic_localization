@@ -4,12 +4,14 @@ from reader import Reader
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy.optimize import curve_fit
+from datetime import datetime, timezone
 
 
 def calculate_sos(reader: Reader):
     distance_tof = reader.get_data('/bluerov01/distance_tof')
     n_messages = len(distance_tof)
     timestamps = np.zeros([n_messages])
+    timestamps_datetime = np.array([])
     distances_rtk_corrupt = np.zeros(
         [n_messages])  # corrupt because pressure wasn't subscribed properly
     tof = np.zeros([n_messages])
@@ -17,6 +19,9 @@ def calculate_sos(reader: Reader):
     i = 0
     for msg, time_received in distance_tof:
         timestamps[i] = time_received * 1e-9
+        timestamps_datetime = np.append(
+            timestamps_datetime,
+            datetime.fromtimestamp(timestamps[i], timezone.utc))
         distances_rtk_corrupt[i] = msg.distance
         tof[i] = msg.tof
         i += 1
@@ -28,12 +33,15 @@ def calculate_sos(reader: Reader):
     x_gt = np.zeros([n_messages])
     y_gt = np.zeros([n_messages])
     t_gt = np.zeros([n_messages])
+    t_gt_datetime = np.array([])
 
     i = 0
     for msg, time_received in ground_truth_data:
         x_gt[i] = msg.east
         y_gt[i] = msg.north
         t_gt[i] = time_received * 1e-9
+        t_gt_datetime = np.append(t_gt_datetime,
+                                  datetime.fromtimestamp(t_gt[i], timezone.utc))
         i += 1
 
     pressure_data = reader.get_data('/bluerov01/pressure')
@@ -63,7 +71,7 @@ def calculate_sos(reader: Reader):
     # calculated hydrophone depth
     pressure_surface = 100000.0
     density_water = 1e4
-    distance_pressure_sensor_hydrophone = -0.25
+    distance_pressure_sensor_hydrophone = -0.25  # bei two_modems_dynamic_v4 und reihum 0.42, sonst -0.25
     hydrophone_depth = np.zeros(len(pressure))
     for i, p in enumerate(pressure):
         hydrophone_depth[i] = (
@@ -83,6 +91,9 @@ def calculate_sos(reader: Reader):
 
     # rtk distances mapped to timestamps of tof measurements
     distances_rtk = np.interp(timestamps, t_gt, distance_gt_1)
+
+    # rtk and ac ranging error
+    error = abs(distances_rtk - distances_ctd_sos)
 
     # linear
     # # define the true objective function
@@ -113,7 +124,7 @@ def calculate_sos(reader: Reader):
     SOS = 1 / a
     print('SOS = %.2f' % (SOS))
 
-    figure, axis = plt.subplots(2, 1)
+    figure, axis = plt.subplots(3, 1)
     axis[0].scatter(distances_rtk, tof)
     axis[0].plot(x_regr, y_regr, '--', color='red')
     axis[0].set_title("Best fit through tof over distance")
@@ -121,20 +132,32 @@ def calculate_sos(reader: Reader):
     axis[0].set_ylabel('tof')
     axis[0].grid()
 
-    axis[1].scatter(timestamps, distances_ctd_sos, label='acoustic distances')
+    axis[1].scatter(timestamps_datetime,
+                    distances_ctd_sos,
+                    label='acoustic distances')
     # axis[1].plot(timestamps, distances_rtk, label='rtk distances ac')
-    axis[1].plot(t_gt, distance_gt_1, label='rtk distances', color='green')
+    axis[1].plot(t_gt_datetime,
+                 distance_gt_1,
+                 label='rtk distances',
+                 color='green')
     axis[1].set_title("Acoustic vs rtk distances")
     axis[1].set_xlabel('timestamp')
     axis[1].set_ylabel('distance')
+    axis[1].set_xlim([t_gt_datetime[0], t_gt_datetime[-1]])
     axis[1].grid()
 
-    plt.legend()
+    axis[2].scatter(timestamps_datetime, error, label='error', color='red')
+    axis[2].set_title("ranging error")
+    axis[2].set_xlabel('timestamp')
+    axis[2].set_ylabel('error')
+    axis[2].set_xlim([t_gt_datetime[0], t_gt_datetime[-1]])
+    axis[2].grid()
     plt.show()
 
 
 def main():
-    reader = Reader('two_modems_dynamic_v3')
+    reader = Reader(
+        'init_sos')  # ab two_modems_dynamic_v4 andere hydrophone depth!!!
     calculate_sos(reader)
 
 

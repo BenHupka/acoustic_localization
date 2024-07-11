@@ -3,6 +3,7 @@
 from reader import Reader
 import matplotlib.pyplot as plt
 import numpy as np
+from datetime import datetime, timezone
 
 
 def plot_ground_truth_vs_estimate(reader: Reader):
@@ -11,12 +12,15 @@ def plot_ground_truth_vs_estimate(reader: Reader):
     x_gt = np.zeros([n_messages])
     y_gt = np.zeros([n_messages])
     t_gt = np.zeros([n_messages])
+    t_gt_datetime = np.array([])
 
     i = 0
     for msg, time_received in ground_truth_data:
         x_gt[i] = msg.east
         y_gt[i] = msg.north
         t_gt[i] = time_received * 1e-9
+        t_gt_datetime = np.append(t_gt_datetime,
+                                  datetime.fromtimestamp(t_gt[i], timezone.utc))
         i += 1
 
     buoy_2_rtk = reader.get_data('/bluerov01/buoy_2')
@@ -146,6 +150,20 @@ def plot_ground_truth_vs_estimate(reader: Reader):
 
     plt.grid(True)
     plt.legend()
+    plt.show()
+
+    figure, axis = plt.subplots(2, 1)
+    axis[0].plot(t_gt_datetime, buoy_2_x)
+    axis[0].set_title("x value")
+    axis[0].set_xlabel('time')
+    axis[0].set_ylabel('x')
+    axis[0].grid()
+
+    axis[1].plot(t_gt_datetime, buoy_2_y)
+    axis[1].set_title("y value")
+    axis[1].set_xlabel('time')
+    axis[1].set_ylabel('y value')
+    axis[1].grid()
     plt.show()
 
 

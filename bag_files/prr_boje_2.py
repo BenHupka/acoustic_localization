@@ -78,6 +78,31 @@ def prr(reader: Reader):
         buoy_2_t[i] = time_received * 1e-9
         i += 1
 
+    rov_thruster = reader.get_data('/bluerov01/esc_commander/debug_pwm_output')
+    n_messages = len(rov_thruster)
+    thruster_hor_starboard_front = np.zeros([n_messages])
+    thruster_hor_port_front = np.zeros([n_messages])
+    thruster_hor_starboard_rear = np.zeros([n_messages])
+    thruster_hor_port_rear = np.zeros([n_messages])
+    thruster_vert_starboard_front = np.zeros([n_messages])
+    thruster_vert_port_front = np.zeros([n_messages])
+    thruster_vert_starboard_rear = np.zeros([n_messages])
+    thruster_vert_port_rear = np.zeros([n_messages])
+    t_thrusters = np.zeros([n_messages])
+
+    i = 0
+    for msg, time_received in rov_thruster:
+        thruster_hor_starboard_front[i] = msg.control[0] - 1500
+        thruster_hor_port_front[i] = msg.control[1] - 1500
+        thruster_hor_starboard_rear[i] = msg.control[2] - 1500
+        thruster_hor_port_rear[i] = msg.control[3] - 1500
+        thruster_vert_starboard_front[i] = msg.control[4] - 1500
+        thruster_vert_port_front[i] = msg.control[5] - 1500
+        thruster_vert_starboard_rear[i] = msg.control[6] - 1500
+        thruster_vert_port_rear[i] = msg.control[7] - 1500
+        t_thrusters[i] = time_received * 1e-9
+        i += 1
+
     # calculated hydrophone depth
     pressure_surface = 100000.0
     density_water = 1e4
@@ -112,8 +137,8 @@ def prr(reader: Reader):
     distance_gt_1_received = np.interp(time_received_1, t_gt, distance_gt_1)
 
     # packet reception rates (full cycle)
-    # prr_1 = len(src_received_1) / len(dst_sent_1)
-    # print(prr_1={prr_1})
+    prr_1 = len(src_received_1) / len(dst_sent_1)
+    print(f'prr_1={prr_1}')
 
     # time passed since last distance update
     time_since_last_ack_1 = np.zeros(len(src_received_1))
@@ -124,29 +149,52 @@ def prr(reader: Reader):
             time_since_last_ack_1[i] = time_received_1[i] - time_received_1[i -
                                                                             1]
 
-    # sent and received packets per buoy
-    figure, axis = plt.subplots(2, 1)
+    # # sent and received packets per buoy
+    # figure, axis = plt.subplots(2, 1)
 
-    axis[0].scatter(time_sent_1, dst_sent_1, color='blue', label='sent packets')
-    axis[0].scatter(time_received_1,
-                    src_received_1,
-                    color='red',
-                    label='received packets')
-    axis[0].scatter(time_received_1,
-                    time_since_last_ack_1,
-                    color='green',
-                    label='time since last ack')
-    axis[0].set_title("packets to/from buoy 2")
-    axis[0].set_xlabel('timestamp')
-    axis[0].set_ylabel('id')
-    axis[0].grid()
+    # axis[0].scatter(time_sent_1, dst_sent_1, color='blue', label='sent packets')
+    # axis[0].scatter(time_received_1,
+    #                 src_received_1,
+    #                 color='red',
+    #                 label='received packets')
+    # axis[0].scatter(time_received_1,
+    #                 time_since_last_ack_1,
+    #                 color='green',
+    #                 label='time since last ack')
+    # axis[0].set_title("packets to/from buoy 2")
+    # axis[0].set_xlabel('timestamp')
+    # axis[0].set_ylabel('id')
+    # axis[0].grid()
 
-    # time since last ack over distance
-    axis[1].scatter(distance_gt_1_received, time_since_last_ack_1)
-    axis[1].set_title("packets to/from buoy 2")
-    axis[1].set_xlabel('rtk distance')
-    axis[1].set_ylabel('time since last ack')
-    axis[1].grid()
+    # # time since last ack over distance
+    # axis[1].scatter(distance_gt_1_received, time_since_last_ack_1)
+    # axis[1].set_title("packets to/from buoy 2")
+    # axis[1].set_xlabel('rtk distance')
+    # axis[1].set_ylabel('time since last ack')
+    # axis[1].grid()
+
+    # plt.show()
+
+    # thruste commands
+    figure, axis = plt.subplots(4, 2)
+
+    axis[0, 0].plot(t_thrusters, thruster_hor_starboard_front)
+    axis[0, 0].grid()
+    axis[0, 0].set_title('Thruster command hor starboard front')
+    axis[1, 0].plot(t_thrusters, thruster_hor_port_front)
+    axis[1, 0].grid()
+    axis[2, 0].plot(t_thrusters, thruster_hor_starboard_rear)
+    axis[2, 0].grid()
+    axis[3, 0].plot(t_thrusters, thruster_hor_port_rear)
+    axis[3, 0].grid()
+    axis[0, 1].plot(t_thrusters, thruster_vert_starboard_front)
+    axis[0, 1].grid()
+    axis[1, 1].plot(t_thrusters, thruster_vert_port_front)
+    axis[1, 1].grid()
+    axis[2, 1].plot(t_thrusters, thruster_vert_starboard_rear)
+    axis[2, 1].grid()
+    axis[3, 1].plot(t_thrusters, thruster_vert_port_rear)
+    axis[3, 1].grid()
 
     plt.show()
 
