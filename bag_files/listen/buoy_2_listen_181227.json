@@ -1,0 +1,6259 @@
+{
+  "filename": "listen__20240704_181227.log",
+  "packets": [
+    {
+      "timestamp": "18:12:27.854",
+      "header": {
+        "src": 0,
+        "dst": 0,
+        "type": 132,
+        "status": 0,
+        "dsn": 0,
+        "len": 1
+      },
+      "payload": "HQ==",
+      "footer": null,
+      "info": {
+        "msg_type": "ACI",
+        "msg_id": "ID",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:12:27.950",
+      "header": {
+        "src": 0,
+        "dst": 0,
+        "type": 128,
+        "status": 0,
+        "dsn": 0,
+        "len": 17
+      },
+      "payload": "bWFzdGVyLTI3LTNkMThmNjk=",
+      "footer": null,
+      "info": {
+        "msg_type": "ACI",
+        "msg_id": "VERSION",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:12:28.070",
+      "header": {
+        "src": 0,
+        "dst": 0,
+        "type": 131,
+        "status": 0,
+        "dsn": 0,
+        "len": 66
+      },
+      "payload": "Z2MsYW4scnNzaS1jb25mLGJlc3RiaXQsbG8tc3AsbmIsbm9ub3MvZnNrXzUwLTg1LHR4LWJyaWRnZSxyeC1nZW4z",
+      "footer": null,
+      "info": {
+        "msg_type": "ACI",
+        "msg_id": "CONFIG",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:13:07.997",
+      "header": {
+        "src": 9,
+        "dst": 13,
+        "type": 0,
+        "status": 2,
+        "dsn": 0,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 57,
+        "rssi": 55,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:13:08.877",
+      "header": {
+        "src": 9,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 1,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 56,
+        "rssi": 55,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:13:09.883",
+      "header": {
+        "src": 9,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 2,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 58,
+        "rssi": 58,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:13:10.875",
+      "header": {
+        "src": 9,
+        "dst": 13,
+        "type": 0,
+        "status": 2,
+        "dsn": 3,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 57,
+        "rssi": 53,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:13:11.881",
+      "header": {
+        "src": 9,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 4,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 68,
+        "rssi": 67,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:13:12.888",
+      "header": {
+        "src": 9,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 5,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 72,
+        "rssi": 76,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:13:13.879",
+      "header": {
+        "src": 9,
+        "dst": 13,
+        "type": 0,
+        "status": 2,
+        "dsn": 6,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 57,
+        "rssi": 54,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:13:14.358",
+      "header": {
+        "src": 13,
+        "dst": 9,
+        "type": 127,
+        "status": 0,
+        "dsn": 6,
+        "len": 4
+      },
+      "payload": "AAAv5A==",
+      "footer": {
+        "power": 39,
+        "rssi": 34,
+        "biterrors": 1,
+        "agcMean": 2,
+        "agcMin": 2,
+        "agcMax": 2
+      },
+      "info": {
+        "msg_type": "ACK",
+        "msg_id": "RANGING",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:13:14.886",
+      "header": {
+        "src": 9,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 7,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 57,
+        "rssi": 55,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:13:15.876",
+      "header": {
+        "src": 9,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 8,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 62,
+        "rssi": 61,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:13:16.883",
+      "header": {
+        "src": 9,
+        "dst": 13,
+        "type": 0,
+        "status": 2,
+        "dsn": 9,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 60,
+        "rssi": 58,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:13:18.881",
+      "header": {
+        "src": 9,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 11,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 58,
+        "rssi": 49,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:13:21.887",
+      "header": {
+        "src": 9,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 14,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 52,
+        "rssi": 47,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:13:24.877",
+      "header": {
+        "src": 9,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 16,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 49,
+        "rssi": 33,
+        "biterrors": 3,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:13:26.875",
+      "header": {
+        "src": 9,
+        "dst": 13,
+        "type": 0,
+        "status": 2,
+        "dsn": 18,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 47,
+        "rssi": 39,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:13:27.881",
+      "header": {
+        "src": 9,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 19,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 51,
+        "rssi": 41,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:13:30.886",
+      "header": {
+        "src": 9,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 22,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 53,
+        "rssi": 47,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:13:31.876",
+      "header": {
+        "src": 9,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 23,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 54,
+        "rssi": 50,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:13:33.874",
+      "header": {
+        "src": 9,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 25,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 57,
+        "rssi": 50,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:13:34.882",
+      "header": {
+        "src": 9,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 26,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 52,
+        "rssi": 43,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:13:35.889",
+      "header": {
+        "src": 9,
+        "dst": 13,
+        "type": 0,
+        "status": 2,
+        "dsn": 27,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 46,
+        "rssi": 30,
+        "biterrors": 3,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:13:36.880",
+      "header": {
+        "src": 9,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 28,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 51,
+        "rssi": 42,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:13:37.887",
+      "header": {
+        "src": 9,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 29,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 48,
+        "rssi": 37,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:13:38.879",
+      "header": {
+        "src": 9,
+        "dst": 13,
+        "type": 0,
+        "status": 2,
+        "dsn": 30,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 50,
+        "rssi": 43,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:13:39.357",
+      "header": {
+        "src": 13,
+        "dst": 9,
+        "type": 127,
+        "status": 0,
+        "dsn": 30,
+        "len": 4
+      },
+      "payload": "AAAv5A==",
+      "footer": {
+        "power": 38,
+        "rssi": 34,
+        "biterrors": 0,
+        "agcMean": 1,
+        "agcMin": 1,
+        "agcMax": 1
+      },
+      "info": {
+        "msg_type": "ACK",
+        "msg_id": "RANGING",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:13:41.882",
+      "header": {
+        "src": 9,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 32,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 58,
+        "rssi": 53,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:13:42.890",
+      "header": {
+        "src": 9,
+        "dst": 13,
+        "type": 0,
+        "status": 2,
+        "dsn": 33,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 59,
+        "rssi": 57,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:13:43.354",
+      "header": {
+        "src": 13,
+        "dst": 9,
+        "type": 127,
+        "status": 0,
+        "dsn": 33,
+        "len": 4
+      },
+      "payload": "AAAv6Q==",
+      "footer": {
+        "power": 43,
+        "rssi": 38,
+        "biterrors": 0,
+        "agcMean": 2,
+        "agcMin": 2,
+        "agcMax": 2
+      },
+      "info": {
+        "msg_type": "ACK",
+        "msg_id": "RANGING",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:13:43.880",
+      "header": {
+        "src": 9,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 34,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 58,
+        "rssi": 52,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:13:44.888",
+      "header": {
+        "src": 9,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 35,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 61,
+        "rssi": 58,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:13:45.878",
+      "header": {
+        "src": 9,
+        "dst": 13,
+        "type": 0,
+        "status": 2,
+        "dsn": 36,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 63,
+        "rssi": 64,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:13:46.886",
+      "header": {
+        "src": 9,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 37,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 61,
+        "rssi": 60,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:13:48.884",
+      "header": {
+        "src": 9,
+        "dst": 13,
+        "type": 0,
+        "status": 2,
+        "dsn": 39,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 61,
+        "rssi": 58,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:13:49.875",
+      "header": {
+        "src": 9,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 40,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 65,
+        "rssi": 61,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:13:50.881",
+      "header": {
+        "src": 9,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 41,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 55,
+        "rssi": 46,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:13:51.378",
+      "header": {
+        "src": 12,
+        "dst": 9,
+        "type": 127,
+        "status": 0,
+        "dsn": 41,
+        "len": 4
+      },
+      "payload": "AAAv5A==",
+      "footer": {
+        "power": 41,
+        "rssi": 32,
+        "biterrors": 5,
+        "agcMean": 4,
+        "agcMin": 4,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "ACK",
+        "msg_id": "RANGING",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:13:51.889",
+      "header": {
+        "src": 9,
+        "dst": 13,
+        "type": 0,
+        "status": 2,
+        "dsn": 42,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 59,
+        "rssi": 55,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:13:52.879",
+      "header": {
+        "src": 9,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 43,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 68,
+        "rssi": 71,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:13:54.877",
+      "header": {
+        "src": 9,
+        "dst": 13,
+        "type": 0,
+        "status": 2,
+        "dsn": 45,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 73,
+        "rssi": 71,
+        "biterrors": 3,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:13:55.885",
+      "header": {
+        "src": 9,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 46,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 78,
+        "rssi": 81,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:13:56.876",
+      "header": {
+        "src": 9,
+        "dst": 12,
+        "type": 126,
+        "status": 2,
+        "dsn": 47,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 72,
+        "rssi": 64,
+        "biterrors": 4,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:13:58.875",
+      "header": {
+        "src": 9,
+        "dst": 13,
+        "type": 0,
+        "status": 2,
+        "dsn": 48,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 81,
+        "rssi": 84,
+        "biterrors": 2,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:13:59.354",
+      "header": {
+        "src": 13,
+        "dst": 9,
+        "type": 127,
+        "status": 0,
+        "dsn": 48,
+        "len": 4
+      },
+      "payload": "AAAv5A==",
+      "footer": {
+        "power": 38,
+        "rssi": 41,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 1
+      },
+      "info": {
+        "msg_type": "ACK",
+        "msg_id": "RANGING",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:13:59.881",
+      "header": {
+        "src": 9,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 49,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 73,
+        "rssi": 67,
+        "biterrors": 1,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:14:00.888",
+      "header": {
+        "src": 9,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 50,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 76,
+        "rssi": 77,
+        "biterrors": 1,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:14:01.878",
+      "header": {
+        "src": 9,
+        "dst": 13,
+        "type": 0,
+        "status": 2,
+        "dsn": 51,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 86,
+        "rssi": 88,
+        "biterrors": 1,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:14:03.876",
+      "header": {
+        "src": 9,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 53,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 84,
+        "rssi": 88,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:14:04.884",
+      "header": {
+        "src": 9,
+        "dst": 13,
+        "type": 0,
+        "status": 2,
+        "dsn": 54,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 80,
+        "rssi": 76,
+        "biterrors": 2,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:14:06.882",
+      "header": {
+        "src": 9,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 56,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 75,
+        "rssi": 75,
+        "biterrors": 1,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:14:07.889",
+      "header": {
+        "src": 9,
+        "dst": 13,
+        "type": 0,
+        "status": 2,
+        "dsn": 57,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 78,
+        "rssi": 74,
+        "biterrors": 1,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:14:09.887",
+      "header": {
+        "src": 9,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 59,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 86,
+        "rssi": 87,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:14:10.382",
+      "header": {
+        "src": 12,
+        "dst": 9,
+        "type": 127,
+        "status": 0,
+        "dsn": 59,
+        "len": 4
+      },
+      "payload": "AAAv5A==",
+      "footer": {
+        "power": 42,
+        "rssi": 38,
+        "biterrors": 1,
+        "agcMean": 4,
+        "agcMin": 4,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "ACK",
+        "msg_id": "RANGING",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:14:10.877",
+      "header": {
+        "src": 9,
+        "dst": 13,
+        "type": 0,
+        "status": 2,
+        "dsn": 60,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 82,
+        "rssi": 96,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:14:11.884",
+      "header": {
+        "src": 9,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 61,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 88,
+        "rssi": 100,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:14:12.876",
+      "header": {
+        "src": 9,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 62,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 87,
+        "rssi": 95,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:14:13.882",
+      "header": {
+        "src": 9,
+        "dst": 13,
+        "type": 126,
+        "status": 2,
+        "dsn": 63,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 82,
+        "rssi": 87,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:14:17.878",
+      "header": {
+        "src": 9,
+        "dst": 13,
+        "type": 0,
+        "status": 2,
+        "dsn": 66,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 87,
+        "rssi": 95,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:14:18.885",
+      "header": {
+        "src": 9,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 67,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 82,
+        "rssi": 89,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:14:19.875",
+      "header": {
+        "src": 9,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 68,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 93,
+        "rssi": 116,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:14:21.873",
+      "header": {
+        "src": 9,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 70,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 82,
+        "rssi": 90,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:14:22.880",
+      "header": {
+        "src": 9,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 71,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 81,
+        "rssi": 90,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:14:23.375",
+      "header": {
+        "src": 12,
+        "dst": 9,
+        "type": 127,
+        "status": 0,
+        "dsn": 71,
+        "len": 4
+      },
+      "payload": "AAAv5A==",
+      "footer": {
+        "power": 44,
+        "rssi": 39,
+        "biterrors": 1,
+        "agcMean": 4,
+        "agcMin": 4,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "ACK",
+        "msg_id": "RANGING",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:14:24.878",
+      "header": {
+        "src": 9,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 73,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 90,
+        "rssi": 104,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:14:26.381",
+      "header": {
+        "src": 12,
+        "dst": 9,
+        "type": 127,
+        "status": 0,
+        "dsn": 74,
+        "len": 4
+      },
+      "payload": "AAAv5A==",
+      "footer": {
+        "power": 43,
+        "rssi": 41,
+        "biterrors": 0,
+        "agcMean": 4,
+        "agcMin": 4,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "ACK",
+        "msg_id": "RANGING",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:14:26.876",
+      "header": {
+        "src": 9,
+        "dst": 13,
+        "type": 0,
+        "status": 2,
+        "dsn": 75,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 105,
+        "rssi": 121,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:14:27.356",
+      "header": {
+        "src": 13,
+        "dst": 9,
+        "type": 127,
+        "status": 0,
+        "dsn": 75,
+        "len": 4
+      },
+      "payload": "AAAv5A==",
+      "footer": {
+        "power": 42,
+        "rssi": 41,
+        "biterrors": 0,
+        "agcMean": 1,
+        "agcMin": 1,
+        "agcMax": 2
+      },
+      "info": {
+        "msg_type": "ACK",
+        "msg_id": "RANGING",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:14:27.883",
+      "header": {
+        "src": 9,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 76,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 93,
+        "rssi": 106,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:14:28.874",
+      "header": {
+        "src": 9,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 77,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 87,
+        "rssi": 97,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:14:29.386",
+      "header": {
+        "src": 12,
+        "dst": 9,
+        "type": 127,
+        "status": 0,
+        "dsn": 77,
+        "len": 4
+      },
+      "payload": "AAAv6Q==",
+      "footer": {
+        "power": 41,
+        "rssi": 37,
+        "biterrors": 0,
+        "agcMean": 4,
+        "agcMin": 4,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "ACK",
+        "msg_id": "RANGING",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:14:29.881",
+      "header": {
+        "src": 9,
+        "dst": 13,
+        "type": 0,
+        "status": 2,
+        "dsn": 78,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 88,
+        "rssi": 94,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:14:30.361",
+      "header": {
+        "src": 13,
+        "dst": 9,
+        "type": 127,
+        "status": 0,
+        "dsn": 78,
+        "len": 4
+      },
+      "payload": "AAAv5A==",
+      "footer": {
+        "power": 49,
+        "rssi": 44,
+        "biterrors": 0,
+        "agcMean": 2,
+        "agcMin": 1,
+        "agcMax": 3
+      },
+      "info": {
+        "msg_type": "ACK",
+        "msg_id": "RANGING",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:14:30.872",
+      "header": {
+        "src": 9,
+        "dst": 29,
+        "type": 126,
+        "status": 2,
+        "dsn": 79,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 82,
+        "rssi": 88,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:14:32.886",
+      "header": {
+        "src": 9,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 80,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 85,
+        "rssi": 91,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:14:33.877",
+      "header": {
+        "src": 9,
+        "dst": 13,
+        "type": 0,
+        "status": 2,
+        "dsn": 81,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 92,
+        "rssi": 86,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:14:34.356",
+      "header": {
+        "src": 13,
+        "dst": 9,
+        "type": 127,
+        "status": 0,
+        "dsn": 81,
+        "len": 4
+      },
+      "payload": "AAAv6Q==",
+      "footer": {
+        "power": 46,
+        "rssi": 41,
+        "biterrors": 0,
+        "agcMean": 2,
+        "agcMin": 2,
+        "agcMax": 2
+      },
+      "info": {
+        "msg_type": "ACK",
+        "msg_id": "RANGING",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:14:34.884",
+      "header": {
+        "src": 9,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 82,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 105,
+        "rssi": 106,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:14:35.875",
+      "header": {
+        "src": 9,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 83,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 107,
+        "rssi": 100,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:14:36.882",
+      "header": {
+        "src": 9,
+        "dst": 13,
+        "type": 0,
+        "status": 2,
+        "dsn": 84,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 98,
+        "rssi": 99,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:14:37.872",
+      "header": {
+        "src": 9,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 85,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 95,
+        "rssi": 88,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:14:39.887",
+      "header": {
+        "src": 9,
+        "dst": 13,
+        "type": 0,
+        "status": 2,
+        "dsn": 87,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 94,
+        "rssi": 95,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:14:40.878",
+      "header": {
+        "src": 9,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 88,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 92,
+        "rssi": 95,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:14:41.885",
+      "header": {
+        "src": 9,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 89,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 103,
+        "rssi": 119,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:14:42.876",
+      "header": {
+        "src": 9,
+        "dst": 13,
+        "type": 0,
+        "status": 2,
+        "dsn": 90,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 101,
+        "rssi": 112,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:14:43.355",
+      "header": {
+        "src": 13,
+        "dst": 9,
+        "type": 127,
+        "status": 0,
+        "dsn": 90,
+        "len": 4
+      },
+      "payload": "AAAv6Q==",
+      "footer": {
+        "power": 45,
+        "rssi": 47,
+        "biterrors": 1,
+        "agcMean": 1,
+        "agcMin": 1,
+        "agcMax": 2
+      },
+      "info": {
+        "msg_type": "ACK",
+        "msg_id": "RANGING",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:14:43.883",
+      "header": {
+        "src": 9,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 91,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 100,
+        "rssi": 111,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:14:44.873",
+      "header": {
+        "src": 9,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 92,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 91,
+        "rssi": 105,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:14:45.881",
+      "header": {
+        "src": 9,
+        "dst": 13,
+        "type": 0,
+        "status": 2,
+        "dsn": 93,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 89,
+        "rssi": 107,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:14:46.871",
+      "header": {
+        "src": 9,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 94,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 77,
+        "rssi": 79,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:14:47.878",
+      "header": {
+        "src": 9,
+        "dst": 12,
+        "type": 126,
+        "status": 2,
+        "dsn": 95,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 101,
+        "rssi": 111,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:14:50.883",
+      "header": {
+        "src": 9,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 97,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 89,
+        "rssi": 99,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:14:51.874",
+      "header": {
+        "src": 9,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 98,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 100,
+        "rssi": 113,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:14:52.386",
+      "header": {
+        "src": 12,
+        "dst": 9,
+        "type": 127,
+        "status": 0,
+        "dsn": 98,
+        "len": 4
+      },
+      "payload": "AAAv6Q==",
+      "footer": {
+        "power": 46,
+        "rssi": 38,
+        "biterrors": 2,
+        "agcMean": 5,
+        "agcMin": 5,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "ACK",
+        "msg_id": "RANGING",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:14:52.881",
+      "header": {
+        "src": 9,
+        "dst": 13,
+        "type": 0,
+        "status": 2,
+        "dsn": 99,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 92,
+        "rssi": 100,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:14:53.872",
+      "header": {
+        "src": 9,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 100,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 93,
+        "rssi": 93,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:14:54.879",
+      "header": {
+        "src": 9,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 101,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 93,
+        "rssi": 88,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:14:55.886",
+      "header": {
+        "src": 9,
+        "dst": 13,
+        "type": 0,
+        "status": 2,
+        "dsn": 102,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 78,
+        "rssi": 75,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:14:56.877",
+      "header": {
+        "src": 9,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 103,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 95,
+        "rssi": 103,
+        "biterrors": 1,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:14:57.884",
+      "header": {
+        "src": 9,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 104,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 86,
+        "rssi": 93,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:14:59.355",
+      "header": {
+        "src": 13,
+        "dst": 9,
+        "type": 127,
+        "status": 0,
+        "dsn": 105,
+        "len": 4
+      },
+      "payload": "AAAv6Q==",
+      "footer": {
+        "power": 51,
+        "rssi": 47,
+        "biterrors": 0,
+        "agcMean": 2,
+        "agcMin": 2,
+        "agcMax": 2
+      },
+      "info": {
+        "msg_type": "ACK",
+        "msg_id": "RANGING",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:15:01.880",
+      "header": {
+        "src": 9,
+        "dst": 13,
+        "type": 0,
+        "status": 2,
+        "dsn": 108,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 78,
+        "rssi": 79,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:15:02.888",
+      "header": {
+        "src": 9,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 109,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 78,
+        "rssi": 79,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:15:03.879",
+      "header": {
+        "src": 9,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 110,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 73,
+        "rssi": 74,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:15:04.886",
+      "header": {
+        "src": 9,
+        "dst": 13,
+        "type": 126,
+        "status": 2,
+        "dsn": 111,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 96,
+        "rssi": 107,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:15:06.884",
+      "header": {
+        "src": 9,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 112,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 69,
+        "rssi": 71,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:15:07.874",
+      "header": {
+        "src": 9,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 113,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 89,
+        "rssi": 102,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:15:08.882",
+      "header": {
+        "src": 9,
+        "dst": 13,
+        "type": 0,
+        "status": 2,
+        "dsn": 114,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 85,
+        "rssi": 97,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:15:09.889",
+      "header": {
+        "src": 9,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 115,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 85,
+        "rssi": 105,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:15:10.880",
+      "header": {
+        "src": 9,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 116,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 80,
+        "rssi": 86,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:15:11.887",
+      "header": {
+        "src": 9,
+        "dst": 13,
+        "type": 0,
+        "status": 2,
+        "dsn": 117,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 77,
+        "rssi": 79,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:15:12.877",
+      "header": {
+        "src": 9,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 118,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 82,
+        "rssi": 88,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:15:13.885",
+      "header": {
+        "src": 9,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 119,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 76,
+        "rssi": 85,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:15:14.875",
+      "header": {
+        "src": 9,
+        "dst": 13,
+        "type": 0,
+        "status": 2,
+        "dsn": 120,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 83,
+        "rssi": 93,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:15:15.882",
+      "header": {
+        "src": 9,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 121,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 75,
+        "rssi": 78,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:15:16.874",
+      "header": {
+        "src": 9,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 122,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 71,
+        "rssi": 73,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:15:17.880",
+      "header": {
+        "src": 9,
+        "dst": 13,
+        "type": 0,
+        "status": 2,
+        "dsn": 123,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 65,
+        "rssi": 64,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:15:18.887",
+      "header": {
+        "src": 9,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 124,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 63,
+        "rssi": 60,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:15:19.878",
+      "header": {
+        "src": 9,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 125,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 60,
+        "rssi": 55,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:15:21.875",
+      "header": {
+        "src": 9,
+        "dst": 29,
+        "type": 126,
+        "status": 2,
+        "dsn": 127,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 64,
+        "rssi": 69,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:15:23.890",
+      "header": {
+        "src": 9,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 128,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 78,
+        "rssi": 88,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:15:24.880",
+      "header": {
+        "src": 9,
+        "dst": 13,
+        "type": 0,
+        "status": 2,
+        "dsn": 129,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 81,
+        "rssi": 91,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:15:25.887",
+      "header": {
+        "src": 9,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 130,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 73,
+        "rssi": 76,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:15:28.876",
+      "header": {
+        "src": 9,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 133,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 55,
+        "rssi": 48,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:15:29.883",
+      "header": {
+        "src": 9,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 134,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 50,
+        "rssi": 44,
+        "biterrors": 2,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:15:30.874",
+      "header": {
+        "src": 9,
+        "dst": 13,
+        "type": 0,
+        "status": 2,
+        "dsn": 135,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 53,
+        "rssi": 47,
+        "biterrors": 1,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:15:31.881",
+      "header": {
+        "src": 9,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 136,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 49,
+        "rssi": 35,
+        "biterrors": 2,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:15:33.879",
+      "header": {
+        "src": 9,
+        "dst": 13,
+        "type": 0,
+        "status": 2,
+        "dsn": 138,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 47,
+        "rssi": 35,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:15:34.359",
+      "header": {
+        "src": 13,
+        "dst": 9,
+        "type": 127,
+        "status": 0,
+        "dsn": 138,
+        "len": 4
+      },
+      "payload": "AAAv6Q==",
+      "footer": {
+        "power": 42,
+        "rssi": 44,
+        "biterrors": 0,
+        "agcMean": 1,
+        "agcMin": 1,
+        "agcMax": 2
+      },
+      "info": {
+        "msg_type": "ACK",
+        "msg_id": "RANGING",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:15:35.877",
+      "header": {
+        "src": 9,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 140,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 47,
+        "rssi": 41,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:15:37.890",
+      "header": {
+        "src": 9,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 142,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 46,
+        "rssi": 37,
+        "biterrors": 1,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:15:40.880",
+      "header": {
+        "src": 9,
+        "dst": 13,
+        "type": 0,
+        "status": 2,
+        "dsn": 144,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 43,
+        "rssi": 33,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:15:43.373",
+      "header": {
+        "src": 12,
+        "dst": 9,
+        "type": 127,
+        "status": 0,
+        "dsn": 146,
+        "len": 4
+      },
+      "payload": "AAAv5A==",
+      "footer": {
+        "power": 37,
+        "rssi": 29,
+        "biterrors": 3,
+        "agcMean": 4,
+        "agcMin": 4,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "ACK",
+        "msg_id": "RANGING",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:15:44.349",
+      "header": {
+        "src": 13,
+        "dst": 9,
+        "type": 127,
+        "status": 0,
+        "dsn": 147,
+        "len": 4
+      },
+      "payload": "AAAv6Q==",
+      "footer": {
+        "power": 45,
+        "rssi": 40,
+        "biterrors": 0,
+        "agcMean": 1,
+        "agcMin": 1,
+        "agcMax": 2
+      },
+      "info": {
+        "msg_type": "ACK",
+        "msg_id": "RANGING",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:15:45.883",
+      "header": {
+        "src": 9,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 149,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 43,
+        "rssi": 35,
+        "biterrors": 1,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:15:47.881",
+      "header": {
+        "src": 9,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 151,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 43,
+        "rssi": 40,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:15:50.886",
+      "header": {
+        "src": 9,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 154,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 44,
+        "rssi": 34,
+        "biterrors": 3,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:15:52.373",
+      "header": {
+        "src": 12,
+        "dst": 9,
+        "type": 127,
+        "status": 0,
+        "dsn": 155,
+        "len": 4
+      },
+      "payload": "AAAv5A==",
+      "footer": {
+        "power": 48,
+        "rssi": 43,
+        "biterrors": 0,
+        "agcMean": 5,
+        "agcMin": 5,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "ACK",
+        "msg_id": "RANGING",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:15:52.884",
+      "header": {
+        "src": 9,
+        "dst": 13,
+        "type": 0,
+        "status": 2,
+        "dsn": 156,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 46,
+        "rssi": 35,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:15:55.377",
+      "header": {
+        "src": 12,
+        "dst": 9,
+        "type": 127,
+        "status": 0,
+        "dsn": 158,
+        "len": 4
+      },
+      "payload": "AAAv5A==",
+      "footer": {
+        "power": 46,
+        "rssi": 39,
+        "biterrors": 2,
+        "agcMean": 5,
+        "agcMin": 5,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "ACK",
+        "msg_id": "RANGING",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:15:56.352",
+      "header": {
+        "src": 13,
+        "dst": 9,
+        "type": 127,
+        "status": 0,
+        "dsn": 159,
+        "len": 4
+      },
+      "payload": "AAAv6Q==",
+      "footer": {
+        "power": 44,
+        "rssi": 41,
+        "biterrors": 1,
+        "agcMean": 1,
+        "agcMin": 1,
+        "agcMax": 2
+      },
+      "info": {
+        "msg_type": "ACK",
+        "msg_id": "RANGING",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:15:57.887",
+      "header": {
+        "src": 9,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 160,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 47,
+        "rssi": 38,
+        "biterrors": 1,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:15:58.878",
+      "header": {
+        "src": 9,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 161,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 46,
+        "rssi": 41,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:15:59.885",
+      "header": {
+        "src": 9,
+        "dst": 13,
+        "type": 0,
+        "status": 2,
+        "dsn": 162,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 47,
+        "rssi": 39,
+        "biterrors": 1,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:16:01.883",
+      "header": {
+        "src": 9,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 164,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 47,
+        "rssi": 43,
+        "biterrors": 1,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:16:03.353",
+      "header": {
+        "src": 13,
+        "dst": 9,
+        "type": 127,
+        "status": 0,
+        "dsn": 165,
+        "len": 4
+      },
+      "payload": "AAAv6Q==",
+      "footer": {
+        "power": 42,
+        "rssi": 36,
+        "biterrors": 0,
+        "agcMean": 2,
+        "agcMin": 2,
+        "agcMax": 2
+      },
+      "info": {
+        "msg_type": "ACK",
+        "msg_id": "RANGING",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:16:03.881",
+      "header": {
+        "src": 9,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 166,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 54,
+        "rssi": 40,
+        "biterrors": 0,
+        "agcMean": 1,
+        "agcMin": 1,
+        "agcMax": 1
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:16:04.888",
+      "header": {
+        "src": 9,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 167,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 47,
+        "rssi": 39,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:16:05.384",
+      "header": {
+        "src": 12,
+        "dst": 9,
+        "type": 127,
+        "status": 0,
+        "dsn": 167,
+        "len": 4
+      },
+      "payload": "AAAv5A==",
+      "footer": {
+        "power": 40,
+        "rssi": 33,
+        "biterrors": 1,
+        "agcMean": 4,
+        "agcMin": 4,
+        "agcMax": 4
+      },
+      "info": {
+        "msg_type": "ACK",
+        "msg_id": "RANGING",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:16:08.373",
+      "header": {
+        "src": 12,
+        "dst": 9,
+        "type": 127,
+        "status": 0,
+        "dsn": 170,
+        "len": 4
+      },
+      "payload": "AAAv6Q==",
+      "footer": {
+        "power": 39,
+        "rssi": 33,
+        "biterrors": 0,
+        "agcMean": 4,
+        "agcMin": 4,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "ACK",
+        "msg_id": "RANGING",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:16:08.884",
+      "header": {
+        "src": 9,
+        "dst": 13,
+        "type": 0,
+        "status": 2,
+        "dsn": 171,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 47,
+        "rssi": 37,
+        "biterrors": 1,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:16:10.882",
+      "header": {
+        "src": 9,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 173,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 52,
+        "rssi": 41,
+        "biterrors": 1,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:16:11.889",
+      "header": {
+        "src": 9,
+        "dst": 13,
+        "type": 0,
+        "status": 2,
+        "dsn": 174,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 44,
+        "rssi": 33,
+        "biterrors": 2,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:16:12.352",
+      "header": {
+        "src": 13,
+        "dst": 9,
+        "type": 127,
+        "status": 0,
+        "dsn": 174,
+        "len": 4
+      },
+      "payload": "AAAv8w==",
+      "footer": {
+        "power": 41,
+        "rssi": 37,
+        "biterrors": 0,
+        "agcMean": 1,
+        "agcMin": 1,
+        "agcMax": 2
+      },
+      "info": {
+        "msg_type": "ACK",
+        "msg_id": "RANGING",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:16:15.373",
+      "header": {
+        "src": 12,
+        "dst": 9,
+        "type": 127,
+        "status": 0,
+        "dsn": 176,
+        "len": 4
+      },
+      "payload": "AAAv5A==",
+      "footer": {
+        "power": 40,
+        "rssi": 30,
+        "biterrors": 0,
+        "agcMean": 4,
+        "agcMin": 4,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "ACK",
+        "msg_id": "RANGING",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:16:48.622",
+      "header": {
+        "src": 12,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 0,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 49,
+        "rssi": 47,
+        "biterrors": 0,
+        "agcMean": 5,
+        "agcMin": 5,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:16:49.614",
+      "header": {
+        "src": 12,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 1,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 49,
+        "rssi": 44,
+        "biterrors": 0,
+        "agcMean": 5,
+        "agcMin": 5,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:16:50.620",
+      "header": {
+        "src": 12,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 2,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 40,
+        "rssi": 34,
+        "biterrors": 0,
+        "agcMean": 4,
+        "agcMin": 4,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:16:51.612",
+      "header": {
+        "src": 12,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 3,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 39,
+        "rssi": 32,
+        "biterrors": 2,
+        "agcMean": 4,
+        "agcMin": 4,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:16:52.618",
+      "header": {
+        "src": 12,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 4,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 36,
+        "rssi": 29,
+        "biterrors": 1,
+        "agcMean": 4,
+        "agcMin": 4,
+        "agcMax": 4
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:17:51.534",
+      "header": {
+        "src": 12,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 0,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 48,
+        "rssi": 45,
+        "biterrors": 0,
+        "agcMean": 5,
+        "agcMin": 5,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:17:52.542",
+      "header": {
+        "src": 12,
+        "dst": 13,
+        "type": 0,
+        "status": 2,
+        "dsn": 1,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 39,
+        "rssi": 33,
+        "biterrors": 1,
+        "agcMean": 4,
+        "agcMin": 3,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:17:53.004",
+      "header": {
+        "src": 13,
+        "dst": 12,
+        "type": 127,
+        "status": 0,
+        "dsn": 1,
+        "len": 4
+      },
+      "payload": "AAAv5A==",
+      "footer": {
+        "power": 45,
+        "rssi": 42,
+        "biterrors": 0,
+        "agcMean": 2,
+        "agcMin": 2,
+        "agcMax": 2
+      },
+      "info": {
+        "msg_type": "ACK",
+        "msg_id": "RANGING",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:17:53.357",
+      "header": {
+        "src": 12,
+        "dst": 9,
+        "type": 0,
+        "status": 2,
+        "dsn": 2,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 44,
+        "rssi": 36,
+        "biterrors": 0,
+        "agcMean": 5,
+        "agcMin": 5,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:17:53.821",
+      "header": {
+        "src": 9,
+        "dst": 12,
+        "type": 127,
+        "status": 0,
+        "dsn": 2,
+        "len": 4
+      },
+      "payload": "AAAv5A==",
+      "footer": {
+        "power": 70,
+        "rssi": 72,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "ACK",
+        "msg_id": "RANGING",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:17:56.825",
+      "header": {
+        "src": 13,
+        "dst": 12,
+        "type": 127,
+        "status": 0,
+        "dsn": 5,
+        "len": 4
+      },
+      "payload": "AAAv5A==",
+      "footer": {
+        "power": 42,
+        "rssi": 40,
+        "biterrors": 0,
+        "agcMean": 1,
+        "agcMin": 1,
+        "agcMax": 2
+      },
+      "info": {
+        "msg_type": "ACK",
+        "msg_id": "RANGING",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:17:57.177",
+      "header": {
+        "src": 12,
+        "dst": 9,
+        "type": 0,
+        "status": 2,
+        "dsn": 6,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 44,
+        "rssi": 37,
+        "biterrors": 0,
+        "agcMean": 5,
+        "agcMin": 5,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:17:58.168",
+      "header": {
+        "src": 12,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 7,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 45,
+        "rssi": 35,
+        "biterrors": 0,
+        "agcMean": 5,
+        "agcMin": 5,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:17:59.000",
+      "header": {
+        "src": 12,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 8,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 41,
+        "rssi": 34,
+        "biterrors": 0,
+        "agcMean": 5,
+        "agcMin": 5,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:18:00.007",
+      "header": {
+        "src": 12,
+        "dst": 13,
+        "type": 0,
+        "status": 2,
+        "dsn": 9,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 45,
+        "rssi": 42,
+        "biterrors": 0,
+        "agcMean": 5,
+        "agcMin": 5,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:18:00.470",
+      "header": {
+        "src": 13,
+        "dst": 12,
+        "type": 127,
+        "status": 0,
+        "dsn": 9,
+        "len": 4
+      },
+      "payload": "AAAv5A==",
+      "footer": {
+        "power": 44,
+        "rssi": 44,
+        "biterrors": 0,
+        "agcMean": 1,
+        "agcMin": 1,
+        "agcMax": 2
+      },
+      "info": {
+        "msg_type": "ACK",
+        "msg_id": "RANGING",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:18:00.822",
+      "header": {
+        "src": 12,
+        "dst": 9,
+        "type": 0,
+        "status": 2,
+        "dsn": 10,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 50,
+        "rssi": 45,
+        "biterrors": 0,
+        "agcMean": 5,
+        "agcMin": 5,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:18:01.813",
+      "header": {
+        "src": 12,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 11,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 40,
+        "rssi": 34,
+        "biterrors": 0,
+        "agcMean": 4,
+        "agcMin": 4,
+        "agcMax": 4
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:18:02.643",
+      "header": {
+        "src": 12,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 12,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 50,
+        "rssi": 41,
+        "biterrors": 1,
+        "agcMean": 5,
+        "agcMin": 5,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:18:03.635",
+      "header": {
+        "src": 12,
+        "dst": 13,
+        "type": 0,
+        "status": 2,
+        "dsn": 13,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 36,
+        "rssi": 34,
+        "biterrors": 0,
+        "agcMean": 3,
+        "agcMin": 3,
+        "agcMax": 4
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:18:04.098",
+      "header": {
+        "src": 13,
+        "dst": 12,
+        "type": 127,
+        "status": 0,
+        "dsn": 13,
+        "len": 4
+      },
+      "payload": "AAAv7g==",
+      "footer": {
+        "power": 46,
+        "rssi": 47,
+        "biterrors": 1,
+        "agcMean": 2,
+        "agcMin": 2,
+        "agcMax": 2
+      },
+      "info": {
+        "msg_type": "ACK",
+        "msg_id": "RANGING",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:18:05.457",
+      "header": {
+        "src": 12,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 15,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 45,
+        "rssi": 41,
+        "biterrors": 0,
+        "agcMean": 5,
+        "agcMin": 5,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:18:06.463",
+      "header": {
+        "src": 12,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 16,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 40,
+        "rssi": 38,
+        "biterrors": 0,
+        "agcMean": 4,
+        "agcMin": 4,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:18:07.455",
+      "header": {
+        "src": 12,
+        "dst": 13,
+        "type": 0,
+        "status": 2,
+        "dsn": 17,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 46,
+        "rssi": 37,
+        "biterrors": 2,
+        "agcMean": 5,
+        "agcMin": 5,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:18:08.461",
+      "header": {
+        "src": 12,
+        "dst": 9,
+        "type": 0,
+        "status": 2,
+        "dsn": 18,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 44,
+        "rssi": 39,
+        "biterrors": 0,
+        "agcMean": 5,
+        "agcMin": 5,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:18:10.460",
+      "header": {
+        "src": 12,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 20,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 47,
+        "rssi": 41,
+        "biterrors": 0,
+        "agcMean": 5,
+        "agcMin": 5,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:18:12.458",
+      "header": {
+        "src": 12,
+        "dst": 9,
+        "type": 0,
+        "status": 2,
+        "dsn": 22,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 37,
+        "rssi": 30,
+        "biterrors": 0,
+        "agcMean": 4,
+        "agcMin": 4,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:18:13.464",
+      "header": {
+        "src": 12,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 23,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 46,
+        "rssi": 41,
+        "biterrors": 1,
+        "agcMean": 5,
+        "agcMin": 5,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:18:14.454",
+      "header": {
+        "src": 12,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 24,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 38,
+        "rssi": 34,
+        "biterrors": 1,
+        "agcMean": 3,
+        "agcMin": 3,
+        "agcMax": 4
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:18:15.462",
+      "header": {
+        "src": 12,
+        "dst": 13,
+        "type": 0,
+        "status": 2,
+        "dsn": 25,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 36,
+        "rssi": 29,
+        "biterrors": 1,
+        "agcMean": 3,
+        "agcMin": 3,
+        "agcMax": 4
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:18:16.469",
+      "header": {
+        "src": 12,
+        "dst": 9,
+        "type": 0,
+        "status": 2,
+        "dsn": 26,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 39,
+        "rssi": 31,
+        "biterrors": 1,
+        "agcMean": 4,
+        "agcMin": 4,
+        "agcMax": 4
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:18:17.460",
+      "header": {
+        "src": 12,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 27,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 36,
+        "rssi": 28,
+        "biterrors": 1,
+        "agcMean": 3,
+        "agcMin": 3,
+        "agcMax": 4
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:18:19.298",
+      "header": {
+        "src": 12,
+        "dst": 13,
+        "type": 0,
+        "status": 2,
+        "dsn": 29,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 46,
+        "rssi": 35,
+        "biterrors": 0,
+        "agcMean": 5,
+        "agcMin": 5,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:18:20.305",
+      "header": {
+        "src": 12,
+        "dst": 9,
+        "type": 0,
+        "status": 2,
+        "dsn": 30,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 40,
+        "rssi": 36,
+        "biterrors": 1,
+        "agcMean": 4,
+        "agcMin": 4,
+        "agcMax": 4
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:18:21.297",
+      "header": {
+        "src": 12,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 31,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 46,
+        "rssi": 41,
+        "biterrors": 0,
+        "agcMean": 5,
+        "agcMin": 5,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:18:22.127",
+      "header": {
+        "src": 12,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 32,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 46,
+        "rssi": 42,
+        "biterrors": 1,
+        "agcMean": 5,
+        "agcMin": 5,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:18:23.118",
+      "header": {
+        "src": 12,
+        "dst": 13,
+        "type": 0,
+        "status": 2,
+        "dsn": 33,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 49,
+        "rssi": 45,
+        "biterrors": 0,
+        "agcMean": 5,
+        "agcMin": 5,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:18:25.117",
+      "header": {
+        "src": 12,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 35,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 55,
+        "rssi": 53,
+        "biterrors": 0,
+        "agcMean": 5,
+        "agcMin": 5,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:18:25.948",
+      "header": {
+        "src": 12,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 36,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 41,
+        "rssi": 36,
+        "biterrors": 0,
+        "agcMean": 4,
+        "agcMin": 4,
+        "agcMax": 4
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:18:27.946",
+      "header": {
+        "src": 12,
+        "dst": 9,
+        "type": 0,
+        "status": 2,
+        "dsn": 38,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 52,
+        "rssi": 48,
+        "biterrors": 0,
+        "agcMean": 5,
+        "agcMin": 5,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:18:28.953",
+      "header": {
+        "src": 12,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 39,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 43,
+        "rssi": 39,
+        "biterrors": 0,
+        "agcMean": 4,
+        "agcMin": 4,
+        "agcMax": 4
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:18:29.784",
+      "header": {
+        "src": 12,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 40,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 54,
+        "rssi": 50,
+        "biterrors": 0,
+        "agcMean": 5,
+        "agcMin": 5,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:18:32.789",
+      "header": {
+        "src": 12,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 43,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 39,
+        "rssi": 35,
+        "biterrors": 0,
+        "agcMean": 4,
+        "agcMin": 4,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:18:33.781",
+      "header": {
+        "src": 12,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 44,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 48,
+        "rssi": 46,
+        "biterrors": 0,
+        "agcMean": 5,
+        "agcMin": 5,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:18:34.787",
+      "header": {
+        "src": 12,
+        "dst": 13,
+        "type": 0,
+        "status": 2,
+        "dsn": 45,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 46,
+        "rssi": 37,
+        "biterrors": 0,
+        "agcMean": 5,
+        "agcMin": 5,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:18:35.794",
+      "header": {
+        "src": 12,
+        "dst": 9,
+        "type": 0,
+        "status": 2,
+        "dsn": 46,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 38,
+        "rssi": 31,
+        "biterrors": 1,
+        "agcMean": 4,
+        "agcMin": 4,
+        "agcMax": 4
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:18:36.785",
+      "header": {
+        "src": 12,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 47,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 38,
+        "rssi": 34,
+        "biterrors": 0,
+        "agcMean": 3,
+        "agcMin": 3,
+        "agcMax": 4
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:18:37.600",
+      "header": {
+        "src": 12,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 48,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 51,
+        "rssi": 46,
+        "biterrors": 0,
+        "agcMean": 5,
+        "agcMin": 5,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:18:40.605",
+      "header": {
+        "src": 12,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 51,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 49,
+        "rssi": 42,
+        "biterrors": 0,
+        "agcMean": 5,
+        "agcMin": 5,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:18:42.603",
+      "header": {
+        "src": 12,
+        "dst": 13,
+        "type": 0,
+        "status": 2,
+        "dsn": 53,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 46,
+        "rssi": 42,
+        "biterrors": 0,
+        "agcMean": 5,
+        "agcMin": 5,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:18:43.610",
+      "header": {
+        "src": 12,
+        "dst": 9,
+        "type": 0,
+        "status": 2,
+        "dsn": 54,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 45,
+        "rssi": 36,
+        "biterrors": 2,
+        "agcMean": 5,
+        "agcMin": 5,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:18:44.600",
+      "header": {
+        "src": 12,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 55,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 46,
+        "rssi": 37,
+        "biterrors": 0,
+        "agcMean": 5,
+        "agcMin": 5,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:18:45.432",
+      "header": {
+        "src": 12,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 56,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 38,
+        "rssi": 27,
+        "biterrors": 1,
+        "agcMean": 4,
+        "agcMin": 4,
+        "agcMax": 4
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:18:48.436",
+      "header": {
+        "src": 12,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 59,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 44,
+        "rssi": 35,
+        "biterrors": 0,
+        "agcMean": 5,
+        "agcMin": 5,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:18:49.268",
+      "header": {
+        "src": 12,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 60,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 37,
+        "rssi": 30,
+        "biterrors": 0,
+        "agcMean": 4,
+        "agcMin": 4,
+        "agcMax": 4
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:18:51.090",
+      "header": {
+        "src": 12,
+        "dst": 9,
+        "type": 0,
+        "status": 2,
+        "dsn": 62,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 38,
+        "rssi": 33,
+        "biterrors": 3,
+        "agcMean": 4,
+        "agcMin": 4,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:18:52.081",
+      "header": {
+        "src": 12,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 63,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 36,
+        "rssi": 32,
+        "biterrors": 0,
+        "agcMean": 4,
+        "agcMin": 4,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:18:52.913",
+      "header": {
+        "src": 12,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 64,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 42,
+        "rssi": 35,
+        "biterrors": 0,
+        "agcMean": 5,
+        "agcMin": 5,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:18:54.909",
+      "header": {
+        "src": 12,
+        "dst": 9,
+        "type": 0,
+        "status": 2,
+        "dsn": 66,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 47,
+        "rssi": 38,
+        "biterrors": 0,
+        "agcMean": 5,
+        "agcMin": 5,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:18:55.917",
+      "header": {
+        "src": 12,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 67,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 46,
+        "rssi": 35,
+        "biterrors": 0,
+        "agcMean": 5,
+        "agcMin": 5,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:18:56.733",
+      "header": {
+        "src": 12,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 68,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 38,
+        "rssi": 32,
+        "biterrors": 0,
+        "agcMean": 4,
+        "agcMin": 4,
+        "agcMax": 4
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:18:58.746",
+      "header": {
+        "src": 12,
+        "dst": 9,
+        "type": 0,
+        "status": 2,
+        "dsn": 70,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 38,
+        "rssi": 34,
+        "biterrors": 1,
+        "agcMean": 4,
+        "agcMin": 4,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:18:59.736",
+      "header": {
+        "src": 12,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 71,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 40,
+        "rssi": 34,
+        "biterrors": 0,
+        "agcMean": 4,
+        "agcMin": 4,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:19:00.567",
+      "header": {
+        "src": 12,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 72,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 49,
+        "rssi": 45,
+        "biterrors": 0,
+        "agcMean": 5,
+        "agcMin": 5,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:19:01.559",
+      "header": {
+        "src": 12,
+        "dst": 13,
+        "type": 0,
+        "status": 2,
+        "dsn": 73,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 39,
+        "rssi": 33,
+        "biterrors": 0,
+        "agcMean": 4,
+        "agcMin": 4,
+        "agcMax": 4
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:19:07.969",
+      "header": {
+        "src": 12,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 0,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 46,
+        "rssi": 47,
+        "biterrors": 0,
+        "agcMean": 5,
+        "agcMin": 5,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:19:08.976",
+      "header": {
+        "src": 12,
+        "dst": 13,
+        "type": 0,
+        "status": 2,
+        "dsn": 1,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 40,
+        "rssi": 36,
+        "biterrors": 0,
+        "agcMean": 4,
+        "agcMin": 4,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:19:09.982",
+      "header": {
+        "src": 12,
+        "dst": 9,
+        "type": 0,
+        "status": 2,
+        "dsn": 2,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 37,
+        "rssi": 30,
+        "biterrors": 0,
+        "agcMean": 4,
+        "agcMin": 4,
+        "agcMax": 4
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:19:10.974",
+      "header": {
+        "src": 12,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 3,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 46,
+        "rssi": 33,
+        "biterrors": 1,
+        "agcMean": 5,
+        "agcMin": 5,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:19:13.979",
+      "header": {
+        "src": 12,
+        "dst": 9,
+        "type": 0,
+        "status": 2,
+        "dsn": 6,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 38,
+        "rssi": 32,
+        "biterrors": 1,
+        "agcMean": 4,
+        "agcMin": 4,
+        "agcMax": 4
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:19:14.442",
+      "header": {
+        "src": 9,
+        "dst": 12,
+        "type": 127,
+        "status": 0,
+        "dsn": 6,
+        "len": 4
+      },
+      "payload": "AAAv7g==",
+      "footer": {
+        "power": 70,
+        "rssi": 71,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "ACK",
+        "msg_id": "RANGING",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:19:14.970",
+      "header": {
+        "src": 12,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 7,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 40,
+        "rssi": 34,
+        "biterrors": 1,
+        "agcMean": 4,
+        "agcMin": 4,
+        "agcMax": 4
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:19:15.800",
+      "header": {
+        "src": 12,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 8,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 49,
+        "rssi": 45,
+        "biterrors": 0,
+        "agcMean": 5,
+        "agcMin": 5,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:19:16.808",
+      "header": {
+        "src": 12,
+        "dst": 13,
+        "type": 0,
+        "status": 2,
+        "dsn": 9,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 47,
+        "rssi": 44,
+        "biterrors": 0,
+        "agcMean": 5,
+        "agcMin": 5,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:19:18.805",
+      "header": {
+        "src": 12,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 11,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 47,
+        "rssi": 41,
+        "biterrors": 0,
+        "agcMean": 5,
+        "agcMin": 5,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:19:20.803",
+      "header": {
+        "src": 12,
+        "dst": 13,
+        "type": 0,
+        "status": 2,
+        "dsn": 13,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 39,
+        "rssi": 34,
+        "biterrors": 0,
+        "agcMean": 4,
+        "agcMin": 4,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:19:22.610",
+      "header": {
+        "src": 12,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 15,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 46,
+        "rssi": 39,
+        "biterrors": 0,
+        "agcMean": 5,
+        "agcMin": 5,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:19:23.616",
+      "header": {
+        "src": 12,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 16,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 45,
+        "rssi": 39,
+        "biterrors": 0,
+        "agcMean": 5,
+        "agcMin": 5,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:19:25.615",
+      "header": {
+        "src": 12,
+        "dst": 9,
+        "type": 0,
+        "status": 2,
+        "dsn": 18,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 41,
+        "rssi": 35,
+        "biterrors": 0,
+        "agcMean": 5,
+        "agcMin": 5,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:19:26.606",
+      "header": {
+        "src": 12,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 19,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 47,
+        "rssi": 39,
+        "biterrors": 1,
+        "agcMean": 5,
+        "agcMin": 5,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:19:27.438",
+      "header": {
+        "src": 12,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 20,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 46,
+        "rssi": 39,
+        "biterrors": 0,
+        "agcMean": 5,
+        "agcMin": 5,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:19:28.444",
+      "header": {
+        "src": 12,
+        "dst": 13,
+        "type": 0,
+        "status": 2,
+        "dsn": 21,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 48,
+        "rssi": 38,
+        "biterrors": 0,
+        "agcMean": 5,
+        "agcMin": 5,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:19:29.436",
+      "header": {
+        "src": 12,
+        "dst": 9,
+        "type": 0,
+        "status": 2,
+        "dsn": 22,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 48,
+        "rssi": 39,
+        "biterrors": 0,
+        "agcMean": 5,
+        "agcMin": 5,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:19:30.442",
+      "header": {
+        "src": 12,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 23,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 38,
+        "rssi": 31,
+        "biterrors": 1,
+        "agcMean": 4,
+        "agcMin": 4,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:19:31.272",
+      "header": {
+        "src": 12,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 24,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 37,
+        "rssi": 32,
+        "biterrors": 2,
+        "agcMean": 4,
+        "agcMin": 4,
+        "agcMax": 4
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:19:32.280",
+      "header": {
+        "src": 12,
+        "dst": 13,
+        "type": 0,
+        "status": 2,
+        "dsn": 25,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 45,
+        "rssi": 35,
+        "biterrors": 2,
+        "agcMean": 5,
+        "agcMin": 5,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:19:33.271",
+      "header": {
+        "src": 12,
+        "dst": 9,
+        "type": 0,
+        "status": 2,
+        "dsn": 26,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 40,
+        "rssi": 33,
+        "biterrors": 0,
+        "agcMean": 4,
+        "agcMin": 4,
+        "agcMax": 4
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:19:34.277",
+      "header": {
+        "src": 12,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 27,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 48,
+        "rssi": 41,
+        "biterrors": 0,
+        "agcMean": 5,
+        "agcMin": 5,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:19:35.094",
+      "header": {
+        "src": 12,
+        "dst": 12,
+        "type": 0,
+        "status": 2,
+        "dsn": 28,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 45,
+        "rssi": 41,
+        "biterrors": 2,
+        "agcMean": 4,
+        "agcMin": 3,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:19:36.100",
+      "header": {
+        "src": 12,
+        "dst": 13,
+        "type": 0,
+        "status": 2,
+        "dsn": 29,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 39,
+        "rssi": 35,
+        "biterrors": 0,
+        "agcMean": 4,
+        "agcMin": 4,
+        "agcMax": 4
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:19:37.107",
+      "header": {
+        "src": 12,
+        "dst": 9,
+        "type": 0,
+        "status": 2,
+        "dsn": 30,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 51,
+        "rssi": 48,
+        "biterrors": 0,
+        "agcMean": 5,
+        "agcMin": 5,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:19:37.570",
+      "header": {
+        "src": 9,
+        "dst": 12,
+        "type": 127,
+        "status": 0,
+        "dsn": 30,
+        "len": 4
+      },
+      "payload": "AAAv7g==",
+      "footer": {
+        "power": 59,
+        "rssi": 53,
+        "biterrors": 0,
+        "agcMean": 0,
+        "agcMin": 0,
+        "agcMax": 0
+      },
+      "info": {
+        "msg_type": "ACK",
+        "msg_id": "RANGING",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:19:39.920",
+      "header": {
+        "src": 12,
+        "dst": 13,
+        "type": 0,
+        "status": 2,
+        "dsn": 33,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 43,
+        "rssi": 39,
+        "biterrors": 1,
+        "agcMean": 5,
+        "agcMin": 5,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:19:40.912",
+      "header": {
+        "src": 12,
+        "dst": 9,
+        "type": 0,
+        "status": 2,
+        "dsn": 34,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 39,
+        "rssi": 29,
+        "biterrors": 0,
+        "agcMean": 4,
+        "agcMin": 4,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    },
+    {
+      "timestamp": "18:19:41.918",
+      "header": {
+        "src": 12,
+        "dst": 29,
+        "type": 0,
+        "status": 2,
+        "dsn": 35,
+        "len": 0
+      },
+      "payload": "",
+      "footer": {
+        "power": 43,
+        "rssi": 36,
+        "biterrors": 0,
+        "agcMean": 5,
+        "agcMin": 5,
+        "agcMax": 5
+      },
+      "info": {
+        "msg_type": "USER",
+        "msg_id": "UNDEFINED",
+        "data": {}
+      }
+    }
+  ]
+}

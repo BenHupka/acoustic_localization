@@ -4,7 +4,7 @@ from reader import Reader
 import matplotlib.pyplot as plt
 import numpy as np
 import json
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 
 
 def prr_bojen(reader: Reader):
@@ -82,23 +82,23 @@ def prr_bojen(reader: Reader):
         filter_arr_received_2]
 
     # logs boje 2 -> id 1
-    f = open(
+    buoy_2 = open(
         '/home/ben/fav/ros2/src/acoustic_localization/bag_files/listen/buoy_2_listen_181227.json',
     )
-    data = json.load(f)
+    data_2 = json.load(buoy_2)
 
     format_timestamp = "%Y-%m-%d %H:%M:%S.%f"
     epoch = datetime(1970, 1, 1, 0, 0, 0, 0)
 
-    buoy_2_timestamps = np.zeros(len(data['packets']))
+    buoy_2_timestamps = np.zeros(len(data_2['packets']))
     buoy_2_datetime = np.array([])
-    buoy_2_src = np.zeros(len(data['packets']))
-    buoy_2_dst = np.zeros(len(data['packets']))
-    buoy_2_type = np.zeros(len(data['packets']))
-    buoy_2_status = np.zeros(len(data['packets']))
+    buoy_2_src = np.zeros(len(data_2['packets']))
+    buoy_2_dst = np.zeros(len(data_2['packets']))
+    buoy_2_type = np.zeros(len(data_2['packets']))
+    buoy_2_status = np.zeros(len(data_2['packets']))
 
     i = 0
-    for packet in data['packets']:
+    for packet in data_2['packets']:
         date_time = "2024-07-04 " + packet['timestamp']
         datetime_object = datetime.strptime(date_time, format_timestamp)
         buoy_2_datetime = np.append(buoy_2_datetime, datetime_object)
@@ -133,12 +133,138 @@ def prr_bojen(reader: Reader):
     buoy_2_status_from_rov_to_buoy = buoy_2_status_from_rov[
         filter_buoy_2_from_rov_to_buoy]
 
+    # logs boje 3 -> id 2
+    buoy_3 = open(
+        '/home/ben/fav/ros2/src/acoustic_localization/bag_files/listen/buoy_3_listen__20240704_181218.json',
+    )
+    data_3 = json.load(buoy_3)
+
+    buoy_3_timestamps = np.zeros(len(data_3['packets']))
+    buoy_3_datetime = np.array([])
+    buoy_3_src = np.zeros(len(data_3['packets']))
+    buoy_3_dst = np.zeros(len(data_3['packets']))
+    buoy_3_type = np.zeros(len(data_3['packets']))
+    buoy_3_status = np.zeros(len(data_3['packets']))
+
+    i = 0
+    for packet in data_3['packets']:
+        date_time = "2024-07-04 " + packet['timestamp']
+        datetime_object = datetime.strptime(
+            date_time, format_timestamp) + timedelta(hours=1)
+        buoy_3_datetime = np.append(buoy_3_datetime, datetime_object)
+        buoy_3_timestamps[i] = (datetime_object - epoch).total_seconds()
+        buoy_3_src[i] = packet['header']['src']
+        buoy_3_dst[i] = packet['header']['dst']
+        buoy_3_type[i] = packet['header']['type']
+        buoy_3_status[i] = packet['header']['status']
+        i += 1
+
+    # last element is after bag_file timestamps
+    np.delete(buoy_3_timestamps, -1)
+    np.delete(buoy_3_datetime, -1)
+    np.delete(buoy_3_src, -1)
+    np.delete(buoy_3_dst, -1)
+    np.delete(buoy_3_type, -1)
+    np.delete(buoy_3_status, -1)
+
+    # filter messages from ROV
+    filter_buoy_3_from_rov = filter_id(9, buoy_3_src)
+    buoy_3_timestamps_from_rov = buoy_3_timestamps[filter_buoy_3_from_rov]
+    buoy_3_datetime_from_rov = buoy_3_datetime[filter_buoy_3_from_rov]
+    buoy_3_src_from_rov = buoy_3_src[filter_buoy_3_from_rov]
+    buoy_3_dst_from_rov = buoy_3_dst[filter_buoy_3_from_rov]
+    buoy_3_type_from_rov = buoy_3_type[filter_buoy_3_from_rov]
+    buoy_3_status_from_rov = buoy_3_status[filter_buoy_3_from_rov]
+
+    #filter messages from ROV to buoy 2
+    filter_buoy_3_from_rov_to_buoy = filter_id(12, buoy_3_dst_from_rov)
+    buoy_3_timestamps_from_rov_to_buoy = buoy_3_timestamps_from_rov[
+        filter_buoy_3_from_rov_to_buoy]
+    buoy_3_datetime_from_rov_to_buoy = buoy_3_datetime_from_rov[
+        filter_buoy_3_from_rov_to_buoy]
+    buoy_3_src_from_rov_to_buoy = buoy_3_src_from_rov[
+        filter_buoy_3_from_rov_to_buoy]
+    buoy_3_dst_from_rov_to_buoy = buoy_3_dst_from_rov[
+        filter_buoy_3_from_rov_to_buoy]
+    buoy_3_type_from_rov_to_buoy = buoy_3_type_from_rov[
+        filter_buoy_3_from_rov_to_buoy]
+    buoy_3_status_from_rov_to_buoy = buoy_3_status_from_rov[
+        filter_buoy_3_from_rov_to_buoy]
+
+    # logs boje 5 -> id 0
+    buoy_5 = open(
+        '/home/ben/fav/ros2/src/acoustic_localization/bag_files/listen/buoy_5_listen__20240704_181230.json',
+    )
+    data_5 = json.load(buoy_5)
+
+    buoy_5_timestamps = np.zeros(len(data_5['packets']))
+    buoy_5_datetime = np.array([])
+    buoy_5_src = np.zeros(len(data_5['packets']))
+    buoy_5_dst = np.zeros(len(data_5['packets']))
+    buoy_5_type = np.zeros(len(data_5['packets']))
+    buoy_5_status = np.zeros(len(data_5['packets']))
+
+    i = 0
+    for packet in data_5['packets']:
+        date_time = "2024-07-04 " + packet['timestamp']
+        datetime_object = datetime.strptime(
+            date_time, format_timestamp) + timedelta(hours=1, seconds=5)
+        buoy_5_datetime = np.append(buoy_5_datetime, datetime_object)
+        buoy_5_timestamps[i] = (datetime_object - epoch).total_seconds()
+        buoy_5_src[i] = packet['header']['src']
+        buoy_5_dst[i] = packet['header']['dst']
+        buoy_5_type[i] = packet['header']['type']
+        buoy_5_status[i] = packet['header']['status']
+        i += 1
+
+    # np.delete(buoy_3_timestamps, -1)
+    # np.delete(buoy_3_datetime, -1)
+    # np.delete(buoy_3_src, -1)
+    # np.delete(buoy_3_dst, -1)
+    # np.delete(buoy_3_type, -1)
+    # np.delete(buoy_3_status, -1)
+
+    # filter messages from ROV
+    filter_buoy_5_from_rov = filter_id(9, buoy_5_src)
+    buoy_5_timestamps_from_rov = buoy_5_timestamps[filter_buoy_5_from_rov]
+    buoy_5_datetime_from_rov = buoy_5_datetime[filter_buoy_5_from_rov]
+    buoy_5_src_from_rov = buoy_5_src[filter_buoy_5_from_rov]
+    buoy_5_dst_from_rov = buoy_5_dst[filter_buoy_5_from_rov]
+    buoy_5_type_from_rov = buoy_5_type[filter_buoy_5_from_rov]
+    buoy_5_status_from_rov = buoy_5_status[filter_buoy_5_from_rov]
+
+    #filter messages from ROV to buoy 2
+    filter_buoy_5_from_rov_to_buoy = filter_id(13, buoy_5_dst_from_rov)
+    buoy_5_timestamps_from_rov_to_buoy = buoy_5_timestamps_from_rov[
+        filter_buoy_5_from_rov_to_buoy]
+    buoy_5_datetime_from_rov_to_buoy = buoy_5_datetime_from_rov[
+        filter_buoy_5_from_rov_to_buoy]
+    buoy_5_src_from_rov_to_buoy = buoy_5_src_from_rov[
+        filter_buoy_5_from_rov_to_buoy]
+    buoy_5_dst_from_rov_to_buoy = buoy_5_dst_from_rov[
+        filter_buoy_5_from_rov_to_buoy]
+    buoy_5_type_from_rov_to_buoy = buoy_5_type_from_rov[
+        filter_buoy_5_from_rov_to_buoy]
+    buoy_5_status_from_rov_to_buoy = buoy_5_status_from_rov[
+        filter_buoy_5_from_rov_to_buoy]
+
+    # Zahlen angekommener Pakete
+    print(
+        f'Boje 1: Gesendete Anfragen = {len(dst_sent_0)}, bei Boje angekommen = {len(buoy_5_dst_from_rov_to_buoy)}, ACKs erhalten = {len(src_received_0)}'
+    )
+    print(
+        f'Boje 2: Gesendete Anfragen = {len(dst_sent_1)}, bei Boje angekommen = {len(buoy_2_dst_from_rov_to_buoy)}, ACKs erhalten = {len(src_received_1)}'
+    )
+    print(
+        f'Boje 3: Gesendete Anfragen = {len(dst_sent_2)}, bei Boje angekommen = {len(buoy_3_dst_from_rov_to_buoy)}, ACKs erhalten = {len(src_received_2)}'
+    )
+
     plt.figure()
-    plt.scatter(buoy_2_datetime_from_rov_to_buoy,
-                buoy_2_dst_from_rov_to_buoy,
+    plt.scatter(buoy_5_datetime_from_rov_to_buoy,
+                buoy_5_dst_from_rov_to_buoy,
                 color='green')
-    plt.scatter(timestamps_sent_datetime_1, dst_sent_1, color='blue')
-    plt.scatter(timestamps_received_datetime_1, src_received_1, color='orange')
+    plt.scatter(timestamps_sent_datetime_0, dst_sent_0, color='blue')
+    plt.scatter(timestamps_received_datetime_0, src_received_0, color='orange')
     plt.show()
 
 

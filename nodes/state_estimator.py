@@ -19,8 +19,8 @@ class state_estimator(Node):
         # system specifications
         self.num_states = 6  # 3D Koordinaten des ROV Schwerpunkts, sowie Geschwindigkeiten
         self.num_anchors = 4
-        self.distance_ROV_hydrophone = 0.0
-        self.pressure = 101325.0
+        self.distance_ROV_hydrophone = 0.42
+        self.pressure = 100000.0
 
         # initial state
         self.x0 = np.array([[0.001], [0.001], [0.001], [0.0], [0.0], [0.0]])

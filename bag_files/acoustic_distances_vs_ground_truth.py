@@ -122,7 +122,7 @@ def plot_ground_truth_vs_estimate(reader: Reader):
     buoy_3_x_norm = np.interp(t_gt, buoy_3_t, buoy_3_x)
     buoy_3_y_norm = np.interp(t_gt, buoy_3_t, buoy_3_y)
     ROV_hydrophone_depth_norm = np.interp(t_gt, t_pressure, hydrophone_depth)
-    buoy_hydrophone_depth_norm = 1.5 * np.ones(len(ROV_hydrophone_depth_norm))
+    buoy_hydrophone_depth_norm = 1.55 * np.ones(len(ROV_hydrophone_depth_norm))
 
     # rtk distances
     distance_gt_0 = np.sqrt(

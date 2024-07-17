@@ -14,25 +14,20 @@ class mqtt_ros_adapter(Node):
     def __init__(self):
         super().__init__(node_name='mqtt_ros_adapter')
 
-        self.broker_address = "localhost"
+        self.broker_address = "base.local"
         self.port = 1883
         self.topics = [
-            "buoy_1/local_info",
-            "buoy_1/status",
-            "buoy_2/local_info",
-            "buoy_2/status",
-            "buoy_3/local_info",
-            "buoy_3/status",
-            "vehicle/local_info",
-            "vehicle/status"
+            "buoy_5/local_info", "buoy_5/status", "buoy_2/local_info",
+            "buoy_2/status", "buoy_3/local_info", "buoy_3/status",
+            "vehicle/local_info", "vehicle/status"
         ]
 
-        self.buoy_1_north = 0.0
-        self.buoy_1_east = 0.0
-        self.buoy_1_down = 0.0
-        self.buoy_1_gnssfix = 0
-        self.buoy_1_carrsoln = 0
-        self.buoy_1_relposval = 0
+        self.buoy_5_north = 0.0
+        self.buoy_5_east = 0.0
+        self.buoy_5_down = 0.0
+        self.buoy_5_gnssfix = 0
+        self.buoy_5_carrsoln = 0
+        self.buoy_5_relposval = 0
 
         self.buoy_2_north = 0.0
         self.buoy_2_east = 0.0
@@ -54,21 +49,20 @@ class mqtt_ros_adapter(Node):
         self.vehicle_gnssfix = 0
         self.vehicle_carrsoln = 0
         self.vehicle_relposval = 0
-    
 
-        self.buoy_1_pub = self.create_publisher(msg_type=RTK,
-                                                      topic='buoy_1',
-                                                      qos_profile=1)
+        self.buoy_5_pub = self.create_publisher(msg_type=RTK,
+                                                topic='buoy_5',
+                                                qos_profile=1)
         self.buoy_2_pub = self.create_publisher(msg_type=RTK,
-                                                      topic='buoy_2',
-                                                      qos_profile=1)
+                                                topic='buoy_2',
+                                                qos_profile=1)
         self.buoy_3_pub = self.create_publisher(msg_type=RTK,
-                                                      topic='buoy_3',
-                                                      qos_profile=1)
+                                                topic='buoy_3',
+                                                qos_profile=1)
         self.vehicle_pub = self.create_publisher(msg_type=RTK,
-                                                      topic='vehicle',
-                                                      qos_profile=1)
-        
+                                                 topic='vehicle',
+                                                 qos_profile=1)
+
         self.client = mqtt.Client()
         self.client.on_connect = self.on_connect
         self.client.on_message = self.on_message
@@ -76,7 +70,7 @@ class mqtt_ros_adapter(Node):
         self.client.connect(self.broker_address, port=self.port)
         # Blocking loop to keep the client running
         self.client.loop_forever()
-    
+
     # Called when connection to the broker is established
     def on_connect(self, client, userdata, flags, rc):
         print("Connected with result code " + str(rc))
@@ -88,33 +82,33 @@ class mqtt_ros_adapter(Node):
     def on_message(self, client, userdata, msg):
         # Decode the message's payload and convert from JSON
         payload = json.loads(msg.payload.decode())
-        
-        if msg.topic == "buoy_1/local_info":
-            self.buoy_1_north = payload["north"] * 1e-2
-            self.buoy_1_east = payload["east"] * 1e-2
-            self.buoy_1_down = - payload["down"] * 1e-2
 
-        if msg.topic == "buoy_1/status":
-            self.buoy_1_gnssfix = payload["gnssFixOK"]
-            self.buoy_1_carrsoln = payload["carrSoln"]
-            self.buoy_1_relposval = payload["relPosValid"]
+        if msg.topic == "buoy_5/local_info":
+            self.buoy_5_north = payload["north"] * 1e-2
+            self.buoy_5_east = payload["east"] * 1e-2
+            self.buoy_5_down = -payload["down"] * 1e-2
 
-            buoy_1 = RTK()
-            buoy_1.id = 0
-            buoy_1.header.stamp = self.get_clock().now().to_msg()
-            buoy_1.north = self.buoy_1_north
-            buoy_1.east = self.buoy_1_east
-            buoy_1.down = self.buoy_1_down
-            buoy_1.gnss_fix_ok = self.buoy_1_gnssfix
-            buoy_1.carr_soln = self.buoy_1_carrsoln
-            buoy_1.rel_pos_valid = self.buoy_1_relposval
+        if msg.topic == "buoy_5/status":
+            self.buoy_5_gnssfix = payload["gnssFixOK"]
+            self.buoy_5_carrsoln = payload["carrSoln"]
+            self.buoy_5_relposval = payload["relPosValid"]
 
-            self.buoy_1_pub.publish(buoy_1)
+            buoy_5 = RTK()
+            buoy_5.id = 0
+            buoy_5.header.stamp = self.get_clock().now().to_msg()
+            buoy_5.north = self.buoy_5_north
+            buoy_5.east = self.buoy_5_east
+            buoy_5.down = self.buoy_5_down
+            buoy_5.gnss_fix_ok = self.buoy_5_gnssfix
+            buoy_5.carr_soln = self.buoy_5_carrsoln
+            buoy_5.rel_pos_valid = self.buoy_5_relposval
+
+            self.buoy_5_pub.publish(buoy_5)
 
         if msg.topic == "buoy_2/local_info":
             self.buoy_2_north = payload["north"] * 1e-2
             self.buoy_2_east = payload["east"] * 1e-2
-            self.buoy_2_down = - payload["down"] * 1e-2
+            self.buoy_2_down = -payload["down"] * 1e-2
 
         if msg.topic == "buoy_2/status":
             self.buoy_2_gnssfix = payload["gnssFixOK"]
@@ -136,7 +130,7 @@ class mqtt_ros_adapter(Node):
         if msg.topic == "buoy_3/local_info":
             self.buoy_3_north = payload["north"] * 1e-2
             self.buoy_3_east = payload["east"] * 1e-2
-            self.buoy_3_down = - payload["down"] * 1e-2
+            self.buoy_3_down = -payload["down"] * 1e-2
 
         if msg.topic == "buoy_3/status":
             self.buoy_3_gnssfix = payload["gnssFixOK"]
@@ -158,7 +152,7 @@ class mqtt_ros_adapter(Node):
         if msg.topic == "vehicle/local_info":
             self.vehicle_north = payload["north"] * 1e-2
             self.vehicle_east = payload["east"] * 1e-2
-            self.vehicle_down = - payload["down"] * 1e-2
+            self.vehicle_down = -payload["down"] * 1e-2
 
         if msg.topic == "vehicle/status":
             self.vehicle_gnssfix = payload["gnssFixOK"]
@@ -176,8 +170,6 @@ class mqtt_ros_adapter(Node):
             vehicle.rel_pos_valid = self.vehicle_relposval
 
             self.vehicle_pub.publish(vehicle)
-
-
 
 
 def main():

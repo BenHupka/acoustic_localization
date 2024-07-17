@@ -62,9 +62,9 @@ class state_estimator(Node):
         self.anchor_poses = np.zeros((self.num_anchors, 3))
 
         # initialize anchor_poses
-        self.anchor_poses[0, :] = [-6.0, -3.4, -1.5]  # buoy_1 (5)
-        self.anchor_poses[1, :] = [-10.65, 5.55, -1.5]  # buoy_2
-        self.anchor_poses[2, :] = [-19.7, -22.7, -1.5]  # buoy_3
+        self.anchor_poses[0, :] = [-6.0, -3.4, -1.55]  # buoy_1 (5)
+        self.anchor_poses[1, :] = [-10.65, 5.55, -1.55]  # buoy_2
+        self.anchor_poses[2, :] = [-19.7, -22.7, -1.55]  # buoy_3
 
         self.state_estimation_pp_pub = self.create_publisher(
             msg_type=Odometry, topic='state_estimate_pp', qos_profile=1)

@@ -117,7 +117,7 @@ def prr(reader: Reader):
     buoy_2_x_norm = np.interp(t_gt, buoy_2_t, buoy_2_x)
     buoy_2_y_norm = np.interp(t_gt, buoy_2_t, buoy_2_y)
     ROV_hydrophone_depth_norm = np.interp(t_gt, t_pressure, hydrophone_depth)
-    buoy_hydrophone_depth_norm = 1.5 * np.ones(len(ROV_hydrophone_depth_norm))
+    buoy_hydrophone_depth_norm = 1.55 * np.ones(len(ROV_hydrophone_depth_norm))
 
     # rtk distances
     distance_gt_1 = np.sqrt(

@@ -122,7 +122,7 @@ def prr(reader: Reader):
     buoy_3_x_norm = np.interp(t_gt, buoy_3_t, buoy_3_x)
     buoy_3_y_norm = np.interp(t_gt, buoy_3_t, buoy_3_y)
     ROV_hydrophone_depth_norm = np.interp(t_gt, t_pressure, hydrophone_depth)
-    buoy_hydrophone_depth_norm = 1.5 * np.ones(len(ROV_hydrophone_depth_norm))
+    buoy_hydrophone_depth_norm = 1.55 * np.ones(len(ROV_hydrophone_depth_norm))
 
     # rtk distances
     distance_gt_0 = np.sqrt(
@@ -161,11 +161,11 @@ def prr(reader: Reader):
     distance_gt_1_received = np.interp(time_received_1, t_gt, distance_gt_1)
     distance_gt_2_received = np.interp(time_received_2, t_gt, distance_gt_2)
 
-    # # packet reception rates (full cycle)
-    # prr_0 = len(src_received_0) / len(dst_sent_0)
-    # prr_1 = len(src_received_1) / len(dst_sent_1)
-    # prr_2 = len(src_received_2) / len(dst_sent_2)
-    # print(f'prr_0 = {prr_0}, prr_1 = {prr_1}, prr_2 = {prr_2}')
+    # packet reception rates (full cycle)
+    prr_0 = len(src_received_0) / len(dst_sent_0)
+    prr_1 = len(src_received_1) / len(dst_sent_1)
+    prr_2 = len(src_received_2) / len(dst_sent_2)
+    print(f'prr_0 = {prr_0}, prr_1 = {prr_1}, prr_2 = {prr_2}')
 
     # time passed since last distance update
     time_since_last_ack_0 = np.zeros(len(src_received_0))
@@ -281,7 +281,7 @@ def filter_id(id, arr):
 
 def main():
     reader = Reader(
-        'two_modems_dynamic'
+        'reihum_modem_test_mit_state_estimator_vergleich_mit_chris_logs'
     )  #reihum_modem_test_mit_state_estimator_vergleich_mit_chris_logs
     prr(reader)
 

@@ -13,6 +13,7 @@ install(PROGRAMS
   nodes/control.py
   nodes/acoustic_adapter.py
   nodes/measurement_start_timer.py
+  nodes/euler_angles.py
   DESTINATION lib/${PROJECT_NAME}
 )
 

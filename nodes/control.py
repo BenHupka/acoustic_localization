@@ -82,17 +82,24 @@ class control(Node):
         self.thrust_pub = self.create_publisher(msg_type=ActuatorSetpoint,
                                                 topic='thrust_setpoint',
                                                 qos_profile=1)
-        self.dvl_yaw_sub = self.create_subscription(
-            msg_type=DeadReckoningReport,
-            topic='dead_reckoning_report',
-            callback=self.on_dvl_yaw,
-            qos_profile=qos)
-        self.position_sub = self.create_subscription(  # für Simulation
+        # self.dvl_yaw_sub = self.create_subscription(
+        #     msg_type=DeadReckoningReport,
+        #     topic='dead_reckoning_report',
+        #     callback=self.on_dvl_yaw,
+        #     qos_profile=qos)
+        self.position_sub = self.create_subscription(
             msg_type=Odometry,
             topic=
             'state_estimate',  # state_estimate (type: Odometry; weiteres .pose in on_xyz) oder zum Test: ground_truth/pose (type: PoseStamped)
             callback=self.on_xyz,
             qos_profile=1)
+        ######################################################################
+        self.vision_pose_sub = self.create_subscription(  #simulation
+            msg_type=PoseWithCovarianceStamped,
+            topic='vision_pose_cov',
+            callback=self.on_vision_pose,
+            qos_profile=qos)
+        ######################################################################
         '''self.position_sub = self.create_subscription(  # für echten ROV (in on_xyz current_X/y/z zweites .pose hinzufügen, an simtime false und bluerov1 denken! vehicle_name:=bluerov01 use_sim_time:=false)
             msg_type=PoseWithCovarianceStamped,
             topic='vision_pose_cov',
@@ -228,12 +235,12 @@ class control(Node):
                           (self.current_setpoint_y - self.current_y)**2 +
                           (self.current_setpoint_z - self.current_z)**2)
 
-        if error < self.look_ahead_distance:
-            self.i = self.i + 1
-            if self.i < 200:
-                self.current_setpoint_x = self.setpoints[self.i, 0]
-                self.current_setpoint_y = self.setpoints[self.i, 1]
-                self.current_setpoint_z = self.setpoints[self.i, 2]
+        # if error < self.look_ahead_distance:
+        #     self.i = self.i + 1
+        #     if self.i < 200:
+        #         self.current_setpoint_x = self.setpoints[self.i, 0]
+        #         self.current_setpoint_y = self.setpoints[self.i, 1]
+        #         self.current_setpoint_z = self.setpoints[self.i, 2]
 
         self.publish_setpoint(setpoint_x=self.current_setpoint_x,
                               setpoint_y=self.current_setpoint_y,
@@ -251,6 +258,20 @@ class control(Node):
 
     def on_dvl_yaw(self, msg: DeadReckoningReport):
         self.yaw = msg.report.rpy.z
+
+    ##################### für Simulation #####################
+    def on_vision_pose(self, msg: PoseWithCovarianceStamped):
+        # You might want to consider the vehicle's orientation
+
+        # get the vehicle orientation expressed as quaternion
+        q = msg.pose.pose.orientation
+        # convert quaternion to euler angles
+        (roll, pitch, yaw) = euler_from_quaternion([q.x, q.y, q.z, q.w])
+
+        # TODO
+        self.yaw = yaw
+
+    ##########################################################
 
     def on_xyz(self, xyz_msg: Odometry):
         # We received a new depth message! Now we can get to action!
@@ -377,7 +398,7 @@ class control(Node):
         thrust_z_R = thrust_z_A
 
         # limit thrusts
-        thrust_limit = 0.5
+        thrust_limit = 0.3
         if thrust_x_R > thrust_limit:
             thrust_x_R = thrust_limit
         elif thrust_x_R < -thrust_limit:
