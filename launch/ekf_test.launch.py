@@ -16,11 +16,11 @@ def generate_launch_description() -> LaunchDescription:
     group = GroupAction([
         PushRosNamespace(LaunchConfiguration('vehicle_name')),
         Node(
-            executable='state_estimator_pp.py',
+            executable='ekf_test.py',
             package='acoustic_localization',
         ),
         Node(
-            executable='pp_rov_rtk_correction.py',
+            executable='state_estimator_test.py',
             package='acoustic_localization',
         )
     ])

@@ -7,6 +7,7 @@ from scipy.optimize import curve_fit
 
 
 def prr(reader: Reader):
+    t_end = 600
     sent_packets = reader.get_data('/bluerov01/sent_packets')
     n_messages = len(sent_packets)
     timestamps_sent = np.zeros([n_messages])
@@ -53,6 +54,18 @@ def prr(reader: Reader):
         y_gt[i] = msg.north
         t_gt[i] = time_received * 1e-9
         i += 1
+
+    t_0 = t_gt[0]
+    # timestamps in Sekunden und Start auf Null
+    t_gt_norm = (t_gt - t_0)
+    timestamps_sent_norm = (timestamps_sent - t_0)
+    timestamps_received_norm = (timestamps_received - t_0)
+
+    x_gt, y_gt, t_gt, t_gt_norm = crop_data3(x_gt, y_gt, t_gt, t_gt_norm, t_end)
+    dst_sent, timestamps_sent, timestamps_sent_norm = crop_data2(
+        dst_sent, timestamps_sent, timestamps_sent_norm, t_end)
+    src_received, timestamps_received, timestamps_received_norm = crop_data2(
+        src_received, timestamps_received, timestamps_received_norm, t_end)
 
     pressure_data = reader.get_data('/bluerov01/pressure')
     n_messages = len(pressure_data)
@@ -103,10 +116,11 @@ def prr(reader: Reader):
         t_thrusters[i] = time_received * 1e-9
         i += 1
 
+    ######################################### RTK Distanzen ##################################
     # calculated hydrophone depth
     pressure_surface = 100000.0
     density_water = 1e4
-    distance_pressure_sensor_hydrophone = -0.25
+    distance_pressure_sensor_hydrophone = -0.15
     hydrophone_depth = np.zeros(len(pressure))
     for i, p in enumerate(pressure):
         hydrophone_depth[i] = (
@@ -124,17 +138,17 @@ def prr(reader: Reader):
         np.power(buoy_2_x_norm - x_gt, 2) + np.power(buoy_2_y_norm - y_gt, 2) +
         np.power(buoy_hydrophone_depth_norm - ROV_hydrophone_depth_norm, 2))
 
+    ######################################### Akustische Pakete und PRR ##################################
     # get sent and received packets to/from each buoy
     filter_arr_sent_1 = filter_id(29, dst_sent)
     dst_sent_1 = dst_sent[filter_arr_sent_1]
     time_sent_1 = timestamps_sent[filter_arr_sent_1]
+    time_sent_1_norm = time_sent_1 - t_0
 
     filter_arr_received_1 = filter_id(29, src_received)
     src_received_1 = src_received[filter_arr_received_1]
     time_received_1 = timestamps_received[filter_arr_received_1]
-
-    # get distance at timestamp of received packet
-    distance_gt_1_received = np.interp(time_received_1, t_gt, distance_gt_1)
+    time_received_1_norm = time_received_1 - t_0
 
     # packet reception rates (full cycle)
     prr_1 = len(src_received_1) / len(dst_sent_1)
@@ -149,7 +163,42 @@ def prr(reader: Reader):
             time_since_last_ack_1[i] = time_received_1[i] - time_received_1[i -
                                                                             1]
 
-    # # sent and received packets per buoy
+    ######################################### Auswertung Distanzen zu Paketzeiten ############################
+    # get distance at timestamp of received packet
+    distance_gt_1_received = np.interp(time_received_1, t_gt, distance_gt_1)
+    distance_gt_1_sent = np.interp(time_sent_1, t_gt, distance_gt_1)
+
+    # prr under dist
+    dist = 8.5
+    filter_arr_received_1_dist = filter_rtk_range(dist, distance_gt_1_received)
+    src_received_1_dist = src_received_1[filter_arr_received_1_dist]
+    filter_arr_sent_1_dist = filter_rtk_range(dist, distance_gt_1_sent)
+    dst_sent_1_dist = dst_sent_1[filter_arr_sent_1_dist]
+    prr_1_dist = len(src_received_1_dist) / len(dst_sent_1_dist)
+    print(f'prr_1 under {dist} ={prr_1_dist}')
+
+    ####################################################### export ###########
+    # data = np.hstack(
+    #     [time_sent_1_norm.reshape(-1, 1),
+    #      distance_gt_1_sent.reshape(-1, 1)])
+    # np.savetxt('export/init_sos_polls.csv',
+    #            data,
+    #            delimiter=',',
+    #            header='time_sent_1_norm, distance_gt_1_sent',
+    #            comments='')
+
+    # data = np.hstack([
+    #     time_received_1_norm.reshape(-1, 1),
+    #     distance_gt_1_received.reshape(-1, 1)
+    # ])
+    # np.savetxt('export/init_sos_acks',
+    #            data,
+    #            delimiter=',',
+    #            header='time_received_1_norm, distance_gt_1_received',
+    #            comments='')
+    ##########################################################################
+
+    # sent and received packets per buoy
     # figure, axis = plt.subplots(2, 1)
 
     # axis[0].scatter(time_sent_1, dst_sent_1, color='blue', label='sent packets')
@@ -175,28 +224,40 @@ def prr(reader: Reader):
 
     # plt.show()
 
-    # thruste commands
-    figure, axis = plt.subplots(4, 2)
-
-    axis[0, 0].plot(t_thrusters, thruster_hor_starboard_front)
-    axis[0, 0].grid()
-    axis[0, 0].set_title('Thruster command hor starboard front')
-    axis[1, 0].plot(t_thrusters, thruster_hor_port_front)
-    axis[1, 0].grid()
-    axis[2, 0].plot(t_thrusters, thruster_hor_starboard_rear)
-    axis[2, 0].grid()
-    axis[3, 0].plot(t_thrusters, thruster_hor_port_rear)
-    axis[3, 0].grid()
-    axis[0, 1].plot(t_thrusters, thruster_vert_starboard_front)
-    axis[0, 1].grid()
-    axis[1, 1].plot(t_thrusters, thruster_vert_port_front)
-    axis[1, 1].grid()
-    axis[2, 1].plot(t_thrusters, thruster_vert_starboard_rear)
-    axis[2, 1].grid()
-    axis[3, 1].plot(t_thrusters, thruster_vert_port_rear)
-    axis[3, 1].grid()
-
+    plt.figure()
+    plt.scatter(time_sent_1_norm, distance_gt_1_sent, label='sent packets')
+    plt.scatter(time_received_1_norm,
+                distance_gt_1_received + 0.1,
+                label='received packets')
+    plt.xlabel('time')
+    plt.ylabel('distance')
+    plt.title('Sent and received packets at RTK distances')
+    plt.grid()
+    plt.xlim([t_gt_norm[0], t_gt_norm[-1]])
     plt.show()
+
+    # # thruste commands
+    # figure, axis = plt.subplots(4, 2)
+
+    # axis[0, 0].plot(t_thrusters, thruster_hor_starboard_front)
+    # axis[0, 0].grid()
+    # axis[0, 0].set_title('Thruster command hor starboard front')
+    # axis[1, 0].plot(t_thrusters, thruster_hor_port_front)
+    # axis[1, 0].grid()
+    # axis[2, 0].plot(t_thrusters, thruster_hor_starboard_rear)
+    # axis[2, 0].grid()
+    # axis[3, 0].plot(t_thrusters, thruster_hor_port_rear)
+    # axis[3, 0].grid()
+    # axis[0, 1].plot(t_thrusters, thruster_vert_starboard_front)
+    # axis[0, 1].grid()
+    # axis[1, 1].plot(t_thrusters, thruster_vert_port_front)
+    # axis[1, 1].grid()
+    # axis[2, 1].plot(t_thrusters, thruster_vert_starboard_rear)
+    # axis[2, 1].grid()
+    # axis[3, 1].plot(t_thrusters, thruster_vert_port_rear)
+    # axis[3, 1].grid()
+
+    # plt.show()
 
 
 def filter_id(id, arr):
@@ -209,8 +270,57 @@ def filter_id(id, arr):
     return filter_arr
 
 
+def filter_rtk_range(dist, arr):
+    filter_arr = []
+    for element in arr:
+        if element < dist:
+            filter_arr.append(True)
+        else:
+            filter_arr.append(False)
+    return filter_arr
+
+
+def crop_data(data, time, t1):
+    filter_arr = []
+    for element in time:
+        if element <= t1:
+            filter_arr.append(True)
+        else:
+            filter_arr.append(False)
+    data_filt = data[filter_arr]
+    time_filt = time[filter_arr]
+    return data_filt, time_filt
+
+
+def crop_data2(data1, data2, time, t1):
+    filter_arr = []
+    for element in time:
+        if element < t1:
+            filter_arr.append(True)
+        else:
+            filter_arr.append(False)
+    data1_filt = data1[filter_arr]
+    data2_filt = data2[filter_arr]
+    time_filt = time[filter_arr]
+    return data1_filt, data2_filt, time_filt
+
+
+def crop_data3(data1, data2, data3, time, t1):
+    filter_arr = []
+    for element in time:
+        if element < t1:
+            filter_arr.append(True)
+        else:
+            filter_arr.append(False)
+    data1_filt = data1[filter_arr]
+    data2_filt = data2[filter_arr]
+    data3_filt = data3[filter_arr]
+    time_filt = time[filter_arr]
+    return data1_filt, data2_filt, data3_filt, time_filt
+
+
 def main():
-    reader = Reader('two_modems_dynamic_v3')
+    reader = Reader('init_sos')
     prr(reader)
 
 

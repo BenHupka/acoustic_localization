@@ -23,12 +23,12 @@ class state_estimator(Node):
 
         # system specifications
         self.num_states = 6  # 3D Koordinaten des ROV Schwerpunkts, sowie Geschwindigkeiten
-        self.num_anchors = 3
-        self.distance_ROV_hydrophone = 0.52
-        self.pressure = 100000.0
+        self.num_anchors = 4
+        self.distance_ROV_hydrophone = 0.0
+        self.pressure = 110000.0
 
         # initial state
-        self.x0 = np.array([[-13.0], [1.0], [-0.5], [0.0], [0.0], [0.0]])
+        self.x0 = np.array([[0.0], [0.0], [0.0], [0.0], [0.0], [0.0]])
 
         # estimated state, this will be updated in Kalman filter algorithm
         self.state = np.copy(self.x0)
@@ -47,14 +47,14 @@ class state_estimator(Node):
         # TODO tuning knob
         # dimension: num states x num states
         # matrix needs to be positive definite and symmetric
-        self.process_noise_position_stddev = 0.3
+        self.process_noise_position_stddev = 0.01
         self.Q = (self.process_noise_position_stddev**2) * np.eye(
             self.num_states)
 
         # measurement noise covariance - how much noise does the measurement
         # contain?
         # TODO tuning knob
-        self.range_noise_stddev = 0.1
+        self.range_noise_stddev = 0.06
         # dimension: num measurements x num measurements
         # attention, this size is varying! -> Depends on detected Tags
 
@@ -62,9 +62,10 @@ class state_estimator(Node):
         self.anchor_poses = np.zeros((self.num_anchors, 3))
 
         # initialize anchor_poses
-        self.anchor_poses[0, :] = [-6.0, -3.4, -1.55]  # buoy_1 (5)
-        self.anchor_poses[1, :] = [-10.65, 5.55, -1.55]  # buoy_2
-        self.anchor_poses[2, :] = [-19.7, -22.7, -1.55]  # buoy_3
+        self.anchor_poses[0, :] = [0.0, 0.0, -1.0]
+        self.anchor_poses[1, :] = [30.0, 0.0, -1.0]
+        self.anchor_poses[2, :] = [30.0, 30.0, -1.0]
+        self.anchor_poses[3, :] = [0.0, 30.0, -1.0]
 
         self.state_estimation_pp_pub = self.create_publisher(
             msg_type=Odometry, topic='state_estimate_pp', qos_profile=1)
@@ -129,7 +130,10 @@ class state_estimator(Node):
 
     def measurement_update(self, anchor_id, distance):
         num_measurements = 2  # eine Distanz und Druck
-        measurements = np.array([[distance], [self.pressure]])
+        noise = np.zeros(1)
+        # noise = np.random.normal(0, 300,
+        #                          1)  # add noise to pressure measurements
+        measurements = np.array([[distance], [self.pressure + noise[0]]])
         h = np.zeros((num_measurements, 1))
         H = np.zeros((num_measurements, self.num_states))
         h[0, 0] = math.sqrt(
@@ -137,7 +141,8 @@ class state_estimator(Node):
             (self.anchor_poses[anchor_id, 1] - self.state[1])**2 +
             (self.anchor_poses[anchor_id, 2] + self.distance_ROV_hydrophone -
              self.state[2])**2)  # Distanz zu Anker bei position estimate
-        h[1, 0] = 101325.0 - 1e4 * self.state[
+        noise = np.random.normal(0, 0.1, 1)  # add noise to range measurements
+        h[1, 0] = 100000.0 - 1e4 * self.state[
             2]  # Druckmessung bei position estimate
         H[0,
           0] = 1 / h[0, 0] * (self.state[0] - self.anchor_poses[anchor_id, 0])
@@ -148,19 +153,19 @@ class state_estimator(Node):
         H[1, 2] = -1e4
 
         y = measurements - h
-        R = np.eye(num_measurements) * (self.range_noise_stddev**2)
+        R = np.array([[self.range_noise_stddev**2, 0], [0, 300**2]])
         S = H @ self.P @ H.transpose() + R
         K = self.P @ H.transpose() @ np.linalg.inv(S)
         self.state = self.state + K @ y
         self.P = (np.eye(self.num_states) - (K @ H)) @ self.P
 
     def prediction(self, dt: float):
-        # f_jacobian = np.array([[1, 0, 0, dt, 0, 0], [0, 1, 0, 0, dt, 0],
-        #                        [0, 0, 1, 0, 0, dt], [0, 0, 0, 1, 0, 0],
-        #                        [0, 0, 0, 0, 1, 0], [0, 0, 0, 0, 0, 1]])
-        f_jacobian = np.array([[1, 0, 0, 0, 0, 0], [0, 1, 0, 0, 0, 0],
-                               [0, 0, 1, 0, 0, 0], [0, 0, 0, 1, 0, 0],
+        f_jacobian = np.array([[1, 0, 0, dt, 0, 0], [0, 1, 0, 0, dt, 0],
+                               [0, 0, 1, 0, 0, dt], [0, 0, 0, 1, 0, 0],
                                [0, 0, 0, 0, 1, 0], [0, 0, 0, 0, 0, 1]])
+        # f_jacobian = np.array([[1, 0, 0, 0, 0, 0], [0, 1, 0, 0, 0, 0],
+        #                        [0, 0, 1, 0, 0, 0], [0, 0, 0, 1, 0, 0],
+        #                        [0, 0, 0, 0, 1, 0], [0, 0, 0, 0, 0, 1]])
         self.state = f_jacobian @ self.state
         self.P = f_jacobian @ self.P @ f_jacobian.transpose() + self.Q
 

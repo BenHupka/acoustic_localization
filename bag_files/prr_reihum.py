@@ -107,7 +107,7 @@ def prr(reader: Reader):
     # calculated hydrophone depth
     pressure_surface = 100000.0
     density_water = 1e4
-    distance_pressure_sensor_hydrophone = -0.25
+    distance_pressure_sensor_hydrophone = -0.15
     hydrophone_depth = np.zeros(len(pressure))
     for i, p in enumerate(pressure):
         hydrophone_depth[i] = (
@@ -165,7 +165,9 @@ def prr(reader: Reader):
     prr_0 = len(src_received_0) / len(dst_sent_0)
     prr_1 = len(src_received_1) / len(dst_sent_1)
     prr_2 = len(src_received_2) / len(dst_sent_2)
-    print(f'prr_0 = {prr_0}, prr_1 = {prr_1}, prr_2 = {prr_2}')
+    print(
+        f'prr_0 = {len(src_received_0)} / {len(dst_sent_0)} = {prr_0}, prr_1 =  {len(src_received_1)} / {len(dst_sent_1)} = {prr_1}, prr_2 =  {len(src_received_2)} / {len(dst_sent_2)} = {prr_2}'
+    )
 
     # time passed since last distance update
     time_since_last_ack_0 = np.zeros(len(src_received_0))

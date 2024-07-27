@@ -22,7 +22,7 @@ class init_sos(Node):
         self.buoy_1_depth = 1.55  # change depending on buoy setup
         self.vehicle_north = 0.0
         self.vehicle_east = 0.0
-        self.distance_hydrophone_depth_sensor = 0.42  # change depending on ROV setup
+        self.distance_hydrophone_depth_sensor = -0.15  # change depending on ROV setup
         self.hydrophone_depth = self.distance_hydrophone_depth_sensor
 
         self.myModem = Modem()

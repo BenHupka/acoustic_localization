@@ -4,6 +4,7 @@ from reader import Reader
 import matplotlib.pyplot as plt
 import numpy as np
 from datetime import datetime, timezone
+import matplotlib as mpl
 
 
 def plot_ground_truth_vs_estimate(reader: Reader):
@@ -62,6 +63,29 @@ def plot_ground_truth_vs_estimate(reader: Reader):
         buoy_5_t[i] = time_received * 1e-9
         i += 1
 
+    t_0 = t_gt[0]
+    t_end = 68
+    # timestamps in Sekunden und Start auf Null
+    t_gt_norm = (t_gt - t_0)
+    # timestamps_norm = (timestamps - t_0)
+
+    # timestamps, tof, timestamps_norm = crop_data2(timestamps, tof,
+    #                                               timestamps_norm, t_end)
+
+    x_gt, y_gt, t_gt, t_gt_norm = crop_data3(x_gt, y_gt, t_gt, t_gt_norm, t_end)
+
+    def colorFader(
+        c1,
+        c2,
+        mix=0
+    ):  #fade (linear interpolate) from color c1 (at mix=0) to c2 (mix=1)
+        c1 = np.array(mpl.colors.to_rgb(c1))
+        c2 = np.array(mpl.colors.to_rgb(c2))
+        return mpl.colors.to_hex((1 - mix) * c1 + mix * c2)
+
+    c1 = 'whitesmoke'
+    c2 = 'green'
+
     # state_estimate_data = reader.get_data('/bluerov01/state_estimate')
     # n_messages = len(state_estimate_data)
     # x_se = np.zeros([n_messages])
@@ -115,18 +139,55 @@ def plot_ground_truth_vs_estimate(reader: Reader):
     # # calculate the proportional values of samples
     # p = 1. * np.arange(len(position_error)) / (len(position_error) - 1)
 
+    ####################################################### export ###########
+    # compress
+    t_gt_norm_compressed = np.linspace(0, 68, 136)
+    x_gt_compressed = np.interp(t_gt_norm_compressed, t_gt_norm, x_gt)
+    y_gt_compressed = np.interp(t_gt_norm_compressed, t_gt_norm, y_gt)
+
+    # data = np.hstack([
+    #     t_gt_norm_compressed.reshape(-1, 1),
+    #     x_gt_compressed.reshape(-1, 1),
+    #     y_gt_compressed.reshape(-1, 1)
+    # ])
+    # np.savetxt('export/dynamic_v3_track.csv',
+    #            data,
+    #            delimiter=',',
+    #            header='t_gt_norm_compressed, x_gt_compressed, y_gt_compressed',
+    #            comments='')
+
+    # data = np.hstack([
+    #     t_gt_norm_compressed.reshape(-1, 1),
+    #     distance_gt_1_compressed.reshape(-1, 1)
+    # ])
+    # np.savetxt('export/init_sos_rtk_distances.csv',
+    #            data,
+    #            delimiter=',',
+    #            header='t_gt_norm, distance_gt_1',
+    #            comments='')
+    ##########################################################################
+
     ######################################### plots ###########################################
     plt.figure(1)
 
     # Track
-    plt.plot(x_gt, y_gt, label='Ground Truth RTK')
+    for i in range(len(t_gt_norm_compressed)):
+        plt.scatter(x_gt_compressed[i],
+                    y_gt_compressed[i],
+                    color=colorFader(
+                        c1, c2,
+                        t_gt_norm_compressed[i] / t_gt_norm_compressed[-1]),
+                    s=10)
+    plt.plot(x_gt[-1], y_gt[-1], color='green', label='ROV RTK Track')
     # plt.plot(x_se, y_se, label='State Estimate')
-    plt.plot(buoy_2_x, buoy_2_y, label='buoy_2')
-    plt.plot(buoy_3_x, buoy_3_y, label='buoy_3')
-    plt.plot(buoy_5_x, buoy_5_y, label='buoy_5')
+    # plt.scatter(buoy_5_x, buoy_5_y,
+    #             label='buoy_1')  # Boje 1 als Bezeichnung für BA
+    plt.scatter(buoy_2_x[0], buoy_2_y[0], label='buoy_2')
+    # plt.scatter(buoy_3_x, buoy_3_y, label='buoy_3')
     plt.xlabel('east')
     plt.ylabel('north')
     plt.title('RTK Tracks')
+    plt.axis('equal')  # für gleiche Skalierung
 
     # x coordinate gt vs se
     # plt.plot(t_se,x_se)
@@ -153,13 +214,13 @@ def plot_ground_truth_vs_estimate(reader: Reader):
     plt.show()
 
     figure, axis = plt.subplots(2, 1)
-    axis[0].plot(t_gt_datetime, buoy_2_x)
+    axis[0].plot(buoy_2_t, buoy_2_x)
     axis[0].set_title("x value")
     axis[0].set_xlabel('time')
     axis[0].set_ylabel('x')
     axis[0].grid()
 
-    axis[1].plot(t_gt_datetime, buoy_2_y)
+    axis[1].plot(buoy_2_t, buoy_2_y)
     axis[1].set_title("y value")
     axis[1].set_xlabel('time')
     axis[1].set_ylabel('y value')
@@ -177,9 +238,35 @@ def filter_id(id, arr):
     return filter_arr
 
 
+def crop_data2(data1, data2, time, t1):
+    filter_arr = []
+    for element in time:
+        if element < t1:
+            filter_arr.append(True)
+        else:
+            filter_arr.append(False)
+    data1_filt = data1[filter_arr]
+    data2_filt = data2[filter_arr]
+    time_filt = time[filter_arr]
+    return data1_filt, data2_filt, time_filt
+
+
+def crop_data3(data1, data2, data3, time, t1):
+    filter_arr = []
+    for element in time:
+        if element < t1:
+            filter_arr.append(True)
+        else:
+            filter_arr.append(False)
+    data1_filt = data1[filter_arr]
+    data2_filt = data2[filter_arr]
+    data3_filt = data3[filter_arr]
+    time_filt = time[filter_arr]
+    return data1_filt, data2_filt, data3_filt, time_filt
+
+
 def main():
-    reader = Reader(
-        'reihum_modem_test_mit_state_estimator_vergleich_mit_chris_logs')
+    reader = Reader('two_modems_dynamic_v3')
     plot_ground_truth_vs_estimate(reader)
 
 
