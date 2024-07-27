@@ -5,9 +5,13 @@ import matplotlib.pyplot as plt
 import numpy as np
 from scipy.optimize import curve_fit
 from datetime import datetime, timezone
+import math
 
 
 def calculate_sos(reader: Reader):
+    t_start = 0.0
+    t_end = 75.0
+
     distance_tof = reader.get_data('/bluerov01/distance_tof')
     n_messages = len(distance_tof)
     timestamps = np.zeros([n_messages])
@@ -26,8 +30,6 @@ def calculate_sos(reader: Reader):
         tof[i] = msg.tof
         i += 1
 
-    distances_ctd_sos = 1483 * tof
-
     ground_truth_data = reader.get_data('/bluerov01/vehicle')
     n_messages = len(ground_truth_data)
     x_gt = np.zeros([n_messages])
@@ -43,6 +45,22 @@ def calculate_sos(reader: Reader):
         t_gt_datetime = np.append(t_gt_datetime,
                                   datetime.fromtimestamp(t_gt[i], timezone.utc))
         i += 1
+
+    t_0 = t_gt[0]
+    # timestamps in Sekunden und Start auf Null
+    t_gt_norm = (t_gt - t_0)
+    timestamps_norm = (timestamps - t_0)
+
+    timestamps, tof, timestamps_norm = crop_data2(timestamps, tof,
+                                                  timestamps_norm, t_end)
+
+    x_gt, y_gt, t_gt, t_gt_norm = crop_data3(x_gt, y_gt, t_gt, t_gt_norm, t_end)
+
+    distances_ctd_sos = 1483 * tof
+
+    # ################################## !!!!!!!!!!!!!! Ideen für Korrektur RTK
+    # x_gt -= 1.5
+    # y_gt -= 1.5
 
     pressure_data = reader.get_data('/bluerov01/pressure')
     n_messages = len(pressure_data)
@@ -71,7 +89,7 @@ def calculate_sos(reader: Reader):
     # calculated hydrophone depth
     pressure_surface = 100000.0
     density_water = 1e4
-    distance_pressure_sensor_hydrophone = -0.25  # bei two_modems_dynamic_v4 und reihum 0.42, sonst -0.25
+    distance_pressure_sensor_hydrophone = 0.52  # bei two_modems_dynamic_v4 und reihum 0.52, sonst -0.15
     hydrophone_depth = np.zeros(len(pressure))
     for i, p in enumerate(pressure):
         hydrophone_depth[i] = (
@@ -93,7 +111,16 @@ def calculate_sos(reader: Reader):
     distances_rtk = np.interp(timestamps, t_gt, distance_gt_1)
 
     # rtk and ac ranging error
-    error = abs(distances_rtk - distances_ctd_sos)
+    error = distances_ctd_sos - distances_rtk
+    error_abs = abs(error)
+
+    #RMS error
+    n = len(error)
+    E = 0.0
+    for i in range(n):
+        E += error[i]**2
+    rms = math.sqrt(E / n)
+    print(f'RMS error = {rms}')
 
     # linear
     # # define the true objective function
@@ -124,40 +151,115 @@ def calculate_sos(reader: Reader):
     SOS = 1 / a
     print('SOS = %.2f' % (SOS))
 
-    figure, axis = plt.subplots(3, 1)
-    axis[0].scatter(distances_rtk, tof)
-    axis[0].plot(x_regr, y_regr, '--', color='red')
-    axis[0].set_title("Best fit through tof over distance")
-    axis[0].set_xlabel('distance')
-    axis[0].set_ylabel('tof')
-    axis[0].grid()
+    ####################################################### export ###########
+    # compress
+    t_gt_norm_compressed = np.linspace(0, 75, 75)
+    distance_gt_1_compressed = np.interp(t_gt_norm_compressed, t_gt_norm,
+                                         distance_gt_1)
 
-    axis[1].scatter(timestamps_datetime,
+    # data = np.hstack([
+    #     timestamps_norm.reshape(-1, 1),
+    #     distances_ctd_sos.reshape(-1, 1),
+    #     error.reshape(-1, 1)
+    # ])
+    # np.savetxt('export/dynamic_v4_acoustic_distances.csv',
+    #            data,
+    #            delimiter=',',
+    #            header='timestamps_norm, distances_ctd, error',
+    #            comments='')
+
+    # data = np.hstack([
+    #     t_gt_norm_compressed.reshape(-1, 1),
+    #     distance_gt_1_compressed.reshape(-1, 1)
+    # ])
+    # np.savetxt('export/dynamic_v4_rtk_distances.csv',
+    #            data,
+    #            delimiter=',',
+    #            header='t_gt_norm, distance_gt_1',
+    #            comments='')
+    ##########################################################################
+
+    figure, axis = plt.subplots(3, 1)
+    axis[2].scatter(distances_rtk, tof)  #distances_rtk, tof
+    axis[2].plot(x_regr, y_regr, '--',
+                 color='red')  #x_regr, y_regr, '--', color='red'
+    axis[2].set_title("Best fit through tof over distance")
+    axis[2].set_xlabel('distance')
+    axis[2].set_ylabel('tof')
+    axis[2].grid()
+
+    axis[0].scatter(timestamps_norm,
                     distances_ctd_sos,
                     label='acoustic distances')
     # axis[1].plot(timestamps, distances_rtk, label='rtk distances ac')
-    axis[1].plot(t_gt_datetime,
-                 distance_gt_1,
+    axis[0].plot(t_gt_norm_compressed,
+                 distance_gt_1_compressed,
                  label='rtk distances',
                  color='green')
-    axis[1].set_title("Acoustic vs rtk distances")
-    axis[1].set_xlabel('timestamp')
-    axis[1].set_ylabel('distance')
-    axis[1].set_xlim([t_gt_datetime[0], t_gt_datetime[-1]])
-    axis[1].grid()
+    axis[0].set_title("Acoustic vs rtk distances")
+    axis[0].set_xlabel('timestamp')
+    axis[0].set_ylabel('distance')
+    axis[0].set_xlim([t_gt_norm[0], t_gt_norm[-1]])
+    axis[0].grid()
 
-    axis[2].scatter(timestamps_datetime, error, label='error', color='red')
-    axis[2].set_title("ranging error")
-    axis[2].set_xlabel('timestamp')
-    axis[2].set_ylabel('error')
-    axis[2].set_xlim([t_gt_datetime[0], t_gt_datetime[-1]])
-    axis[2].grid()
+    axis[1].scatter(
+        timestamps_norm, error, label='error',
+        color='red')  #timestamps_norm, error, label='error', color='red'
+    axis[1].set_title("ranging error")
+    axis[1].set_xlabel('timestamp')
+    axis[1].set_ylabel('error')
+    axis[1].set_xlim([t_gt_norm[0], t_gt_norm[-1]])
+    axis[1].grid()
     plt.show()
+
+    # plt.figure()
+    # # plt.plot(t_gt_norm, ROV_hydrophone_depth_norm)
+    # plt.plot(t_pressure, pressure)
+    # plt.show()
+
+
+def crop_data(data, time, t1):
+    filter_arr = []
+    for element in time:
+        if element <= t1:
+            filter_arr.append(True)
+        else:
+            filter_arr.append(False)
+    data_filt = data[filter_arr]
+    time_filt = time[filter_arr]
+    return data_filt, time_filt
+
+
+def crop_data2(data1, data2, time, t1):
+    filter_arr = []
+    for element in time:
+        if element < t1:
+            filter_arr.append(True)
+        else:
+            filter_arr.append(False)
+    data1_filt = data1[filter_arr]
+    data2_filt = data2[filter_arr]
+    time_filt = time[filter_arr]
+    return data1_filt, data2_filt, time_filt
+
+
+def crop_data3(data1, data2, data3, time, t1):
+    filter_arr = []
+    for element in time:
+        if element < t1:
+            filter_arr.append(True)
+        else:
+            filter_arr.append(False)
+    data1_filt = data1[filter_arr]
+    data2_filt = data2[filter_arr]
+    data3_filt = data3[filter_arr]
+    time_filt = time[filter_arr]
+    return data1_filt, data2_filt, data3_filt, time_filt
 
 
 def main():
-    reader = Reader(
-        'init_sos')  # ab two_modems_dynamic_v4 andere hydrophone depth!!!
+    reader = Reader('two_modems_dynamic_v4'
+                    )  # ab two_modems_dynamic_v4 andere hydrophone depth!!!
     calculate_sos(reader)
 
 

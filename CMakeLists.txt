@@ -14,6 +14,9 @@ install(PROGRAMS
   nodes/acoustic_adapter.py
   nodes/measurement_start_timer.py
   nodes/euler_angles.py
+  nodes/ekf_test.py
+  nodes/state_estimator_test.py
+  nodes/pp_rov_rtk_correction.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
